@@ -2,6 +2,14 @@
 # blatt - (Gentoo) build log arch testing tool
 # by Denis M. (Phr33d0m)
 
+ARGCOUNT=1
+E_WRONGARGS=33
+if [[ $# -lt $ARGCOUNT ]]; then
+	echo "Simple tool to find build system issues."
+	echo "Usage: blatt.sh [package log file]"
+	exit $E_WRONGARGS
+fi
+
 CMD_GREP=$(command -v egrep)
 CMD_GREP_ARGS="-i --color=always"
 
