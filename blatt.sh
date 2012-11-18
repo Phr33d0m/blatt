@@ -81,21 +81,21 @@ for I in $*; do
 	case $DOSTUFF in #This is awful right now. More for structure
 		'hardcalls'|'all')
 			hardcalls $I $PACKAGE
-			;;
+			;;&
 		'lafiles'|'all')
 			lafiles $I $PACKAGE
-			;;
+			;;&
 		'flagrespect'|'all')
 			flagrespect $I $PACKAGE
 			;;
 		?) # should be unreachable right now.
 			exit 0
 	esac
-	
+
 	ISSUES=$HARDCALLS # Can just keep attaching things as tests get added. Any non-negative value makes the if true.
 
 #TODO: Make per-package report files
-	if [[ $ISSUES ]]; then
+	if [[ $ISSUES -gt 0 ]]; then
 		echo -e $BOLD$RED">>> ISSUES FOUND in package: $PACKAGE"
 		if [[ $HARDCALLS ]]; then
 			echo -e $BOLD$YELLOW"> Hardcoded calls:"$NORM
