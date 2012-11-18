@@ -24,13 +24,13 @@ BLDYLW='\e[1;33m' 		# Bold Yellow
 ### HARDCODED CALLS
 
 for i in $(ls --color=never /usr/bin/x86_64-pc-linux-gnu-* | sed 's:/usr/bin/x86_64-pc-linux-gnu-::g'); do
-    CMDS+="^"$i" |";
+	CMDS+="^"$i" |";
 done
 
 CMDS=$(sed 's:|$::' <<< $CMDS)
 
 if [[ $($CMD_GREP $CMD_GREP_ARGS "$CMDS" $1) ]]; then
-    ISSUES+=" hardcalls"
+	ISSUES+=" hardcalls"
 fi
 
 
@@ -38,11 +38,11 @@ fi
 ### MAIN STORY
 
 if [[ $ISSUES ]]; then
-    echo -e "$BLDRED>>> ISSUES FOUND!"
-    if echo $ISSUES | grep -q 'hardcalls'; then
-	echo -e "$BLDYLW> Hardcoded calls:"
-	$CMD_GREP $CMD_GREP_ARGS "'$CMDS'" $1;
-    fi
+	echo -e "$BLDRED>>> ISSUES FOUND!"
+	if echo $ISSUES | grep -q 'hardcalls'; then
+		echo -e "$BLDYLW> Hardcoded calls:"
+		$CMD_GREP $CMD_GREP_ARGS "'$CMDS'" $1;
+	fi
 else
-    echo -e "$BLDGRN>>> NO ISSUES FOUND"
+	echo -e "$BLDGRN>>> NO ISSUES FOUND"
 fi
