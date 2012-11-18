@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # blatt - (Gentoo) build log arch testing tool
 # by Denis M. (Phr33d0m)
 
@@ -37,7 +37,7 @@ fi
 
 ### MAIN STORY
 
-if [ $(expr length $ISSUES) -gt 0 ]; then
+if [[ $ISSUES ]]; then
     echo -e "$BLDRED>>> ISSUES FOUND!"
     if echo $ISSUES | grep -q 'hardcalls'; then
 	echo -e "$BLDYLW> Hardcoded calls:"
