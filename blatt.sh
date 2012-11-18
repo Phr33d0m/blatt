@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # blatt - (Gentoo) build log arch testing tool
 # by Denis M. (Phr33d0m)
+#    Wyatt Epp
 
 ARGCOUNT=1
 E_NOFILE=1
@@ -48,12 +49,12 @@ done
 CMDS=${CMDS%?} #Slice off last character
 CMDS_ALT=${CMDS_ALT%?} #Slice off last character
 # Escape +- for safety
-CMDS=$(echo $CMDS | sed 's:\+:\\+:g;s:\-:\\-:g') 
+CMDS=$(echo $CMDS | sed 's:\+:\\+:g;s:\-:\\-:g')
 CMDS_ALT=$(echo $CMDS_ALT | sed 's:\+:\\+:g;s:\-:\\-:g')
 
 HARDCALLS=0
 function hardcalls(){ # 1: filename 2: PACKAGE
-	if [[ $PN == "gvim" ]];then 
+	if [[ $PN == "gvim" ]];then
 		echo -e $RED"gvim has issues and will screw with your terminal"
 		echo -e $BOLD"TODO: continue ignoring gvim's logs. Do it manually."$NORM
 		return
