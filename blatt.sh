@@ -3,6 +3,7 @@
 # by Denis M. (Phr33d0m)
 
 ARGCOUNT=1
+E_NOFILE=1
 E_WRONGARGS=33
 if [[ $# -lt $ARGCOUNT ]]; then
 	echo "Simple tool to find build system issues."
@@ -21,17 +22,22 @@ PKG_NAME=""
 
 ### COLOURS
 NORM=$(tput sgr0) #NORMal
-RED=$(tput setaf 1)	
+RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
 BOLD=$(tput bold)
 
-#Takes: Filename / Sets: bare PN
-function getpn(){
-	PN=$(basename $1 | sed 's%\(.*\):\(.*\)-[0-9]\..*%\1/\2%')
+#Takes: Filename / Sets: CAT,PN,PV,PACAKGE
+function atomise(){
+	ATOM=($(qatom `basename $1|sed 's/:/\//;s/:.*//'`))
+	CAT=${ATOM[0]}
+	PN=${ATOM[1]}
+	PV=${ATOM[2]}
+	PACKAGE=$CAT/$PN-$PV
 }
 
 ### HARDCODED CALLS
+#TODO: Move this pile of stuff into a function so it only runs if necessary.
 # Set up our grep command
 for i in $(ls --color=never /usr/bin/x86_64-pc-linux-gnu-* | sed 's:/usr/bin/x86_64-pc-linux-gnu-::g'); do
 	CMDS+="^"$i" |";
@@ -39,15 +45,9 @@ for i in $(ls --color=never /usr/bin/x86_64-pc-linux-gnu-* | sed 's:/usr/bin/x86
 done
 CMDS=${CMDS%?} #Slice off last character
 CMDS_ALT=${CMDS_ALT%?} #Slice off last character
-
-CMDS=$(echo $CMDS | sed 's:\+:\\+:g;s:\-:\\-:g')
+# XXX: The following two are for?
+CMDS=$(echo $CMDS | sed 's:\+:\\+:g;s:\-:\\-:g') 
 CMDS_ALT=$(echo $CMDS_ALT | sed 's:\+:\\+:g;s:\-:\\-:g')
-#    if [ -f $1 ]; then
-#	PKG_NAME=`echo $1 | xargs -n 1 basename | sed 's/:/\//;s/:.*//;s/\(.*\)-[0-9]\..*/\1/'`
-#    else
-#	echo "ERROR: File does not exist."
-#	exit 1
-#   fi
 
 HARDCALLS=0 #Boolean
 function hardcalls(){ # 1: filename 2: PN
@@ -61,51 +61,51 @@ function hardcalls(){ # 1: filename 2: PN
 	fi
 }
 
+### CHECK: STATIC LIBS
+#
+function lafiles(){
+	echo "lafiles() Work in progress"
+}
 
+### CHECK: CFLAGS/CXXFLAGS respect
+#
+function flagrespect(){
+	echo "flagrespect() Work in progress"
+}
 
 ### MAIN STORY
 ### Call requested tests on each desired file
+#TODO: convert to getopts and optional running
 for I in $*; do
-	getpn $I
-	case $DOSTUFF in
+	atomise $I
+	case $DOSTUFF in #This is awful right now. More for structure
 		'hardcalls'|'all')
-			hardcalls $I $PN
+			hardcalls $I $PACKAGE
+			;;
+		'lafiles'|'all')
+			lafiles $I $PACKAGE
+			;;
+		'flagrespect'|'all')
+			flagrespect $I $PACKAGE
+			;;
+		?) # should be unreachable right now.
+			exit 0
 	esac
+	
+	ISSUES=$HARDCALLS # Can just keep attaching things as tests get added. Any non-negative value makes the if true.
+
+#TODO: Make per-package report files
+	if [[ $ISSUES ]]; then
+		echo -e $BOLD$RED">>> ISSUES FOUND in package: $PACKAGE"
+		if [[ $HARDCALLS ]]; then
+			echo -e $BOLD$YELLOW"> Hardcoded calls:"$NORM
+			for ((I=0; I<=$HARDCALLS; I++ )); do
+				echo "${I_HARDCALL_LINES[$I]}"
+			done
+		fi
+	else
+		echo -e "$BOLD$GREEN>>> NO ISSUES FOUND"$NORM
+	fi
 done
 
-ISSUES=$HARDCALLS # Can just keep attaching things as tests get added. Any non-negative value makes the if true.
 
-if [[ $ISSUES ]]; then
-	echo -e $RED">>> ISSUES FOUND!"
-	if [[ $HARDCALLS ]]; then
-		echo -e $BOLD$YELLOW"> Hardcoded calls:"$NORM
-		for ((I=0; I<=$HARDCALLS; I++ )); do
-			echo $BOLD$YELLOW"${I_HARDCALLPN[$I]}"$NORM
-			echo "${I_HARDCALL_LINES[$I]}"
-		done
-	fi
-else
-	echo -e "$BOLD$GREEN>>> NO ISSUES FOUND"$NORM
-#
-#
-#if [[ `$CMD_GREP $CMD_GREP_ARGS "'$CMDS'" $1 | wc -l` -gt 0 ]]; then
-#    ISSUES="${ISSUES} hardcalls-issue"
-#fi
-#
-#if [[ `$CMD_GREP $CMD_GREP_ARGS "'$CMDS_ALT'" $1 | wc -l` -gt 0 ]]; then
-#    ISSUES="${ISSUES} hardcalls-issue"
-#fi
-#
-#
-#### MAIN STORY
-##
-#if [[ `echo $ISSUES | grep -c 'issue'` -gt 0 ]]; then
-#    echo -e $BLDRED">>> ISSUES FOUND!"
-#    if echo $ISSUES | grep -q 'hardcalls-issue'; then
-#	echo -e $BLDYLW"> Hardcoded calls:"
-#	$CMD_GREP $CMD_GREP_ARGS "'$CMDS'" $1
-#	$CMD_GREP $CMD_GREP_ARGS "'$CMDS_ALT'" $1
-#    fi
-#else
-#    echo -e $BLDGRN">>> NO ISSUES FOUND"
-fi
