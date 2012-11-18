@@ -1,0 +1,1812 @@
+[32;01m * [39;49;00mPackage:    media-video/vcdimager-0.7.23-r1
+[32;01m * [39;49;00mRepository: gentoo
+[32;01m * [39;49;00mMaintainer: media-video@gentoo.org
+[32;01m * [39;49;00mUSE:        amd64 elibc_glibc kernel_linux userland_GNU xml
+[32;01m * [39;49;00mFEATURES:   preserve-libs sandbox test userpriv usersandbox
+>>> Unpacking source...
+>>> Unpacking vcdimager-0.7.23.tar.gz to /var/tmp/portage/media-video/vcdimager-0.7.23-r1/work
+>>> Source unpacked in /var/tmp/portage/media-video/vcdimager-0.7.23-r1/work
+>>> Preparing source in /var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23 ...
+>>> Source prepared.
+>>> Configuring source in /var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23 ...
+ * econf: updating vcdimager-0.7.23/config.sub with /usr/share/gnuconfig/config.sub
+ * econf: updating vcdimager-0.7.23/config.guess with /usr/share/gnuconfig/config.guess
+./configure --prefix=/usr --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu --mandir=/usr/share/man --infodir=/usr/share/info --datadir=/usr/share --sysconfdir=/etc --localstatedir=/var/lib --libdir=/usr/lib64 --disable-dependency-tracking --disable-static --with-cli-frontends --with-xml-prefix=/usr --disable-xmltest
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether build environment is sane... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for x86_64-pc-linux-gnu-gcc... x86_64-pc-linux-gnu-gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether x86_64-pc-linux-gnu-gcc accepts -g... yes
+checking for x86_64-pc-linux-gnu-gcc option to accept ANSI C... none needed
+checking for style of include used by make... GNU
+checking dependency style of x86_64-pc-linux-gnu-gcc... none
+checking whether x86_64-pc-linux-gnu-gcc accepts -Wall... yes
+checking whether x86_64-pc-linux-gnu-gcc accepts -Wchar-subscripts... yes
+checking whether x86_64-pc-linux-gnu-gcc accepts -Wmissing-prototypes... yes
+checking whether x86_64-pc-linux-gnu-gcc accepts -Wmissing-declarations... yes
+checking whether x86_64-pc-linux-gnu-gcc accepts -Wunused... yes
+checking whether x86_64-pc-linux-gnu-gcc accepts -Wpointer-arith... yes
+checking whether x86_64-pc-linux-gnu-gcc accepts -Wwrite-strings... yes
+checking whether x86_64-pc-linux-gnu-gcc accepts -Wnested-externs... yes
+checking whether x86_64-pc-linux-gnu-gcc accepts -Wno-sign-compare... yes
+checking how to run the C preprocessor... x86_64-pc-linux-gnu-gcc -E
+checking for x86_64-pc-linux-gnu-gcc... (cached) x86_64-pc-linux-gnu-gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether x86_64-pc-linux-gnu-gcc accepts -g... (cached) yes
+checking for x86_64-pc-linux-gnu-gcc option to accept ANSI C... (cached) none needed
+checking dependency style of x86_64-pc-linux-gnu-gcc... (cached) none
+checking for gawk... (cached) gawk
+checking for a sed that does not truncate output... /bin/sed
+checking for egrep... grep -E
+checking for ld used by x86_64-pc-linux-gnu-gcc... /usr/x86_64-pc-linux-gnu/bin/ld
+checking if the linker (/usr/x86_64-pc-linux-gnu/bin/ld) is GNU ld... yes
+checking for /usr/x86_64-pc-linux-gnu/bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /usr/bin/x86_64-pc-linux-gnu-nm -B
+checking whether ln -s works... yes
+checking how to recognise dependent libraries... pass_all
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking for x86_64-pc-linux-gnu-g++... x86_64-pc-linux-gnu-g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether x86_64-pc-linux-gnu-g++ accepts -g... yes
+checking dependency style of x86_64-pc-linux-gnu-g++... none
+checking how to run the C++ preprocessor... x86_64-pc-linux-gnu-g++ -E
+checking for x86_64-pc-linux-gnu-g77... no
+checking for x86_64-pc-linux-gnu-f77... no
+checking for x86_64-pc-linux-gnu-xlf... no
+checking for x86_64-pc-linux-gnu-frt... no
+checking for x86_64-pc-linux-gnu-pgf77... no
+checking for x86_64-pc-linux-gnu-fort77... no
+checking for x86_64-pc-linux-gnu-fl32... no
+checking for x86_64-pc-linux-gnu-af77... no
+checking for x86_64-pc-linux-gnu-f90... no
+checking for x86_64-pc-linux-gnu-xlf90... no
+checking for x86_64-pc-linux-gnu-pgf90... no
+checking for x86_64-pc-linux-gnu-epcf90... no
+checking for x86_64-pc-linux-gnu-f95... no
+checking for x86_64-pc-linux-gnu-fort... no
+checking for x86_64-pc-linux-gnu-xlf95... no
+checking for x86_64-pc-linux-gnu-ifc... no
+checking for x86_64-pc-linux-gnu-efc... no
+checking for x86_64-pc-linux-gnu-pgf95... no
+checking for x86_64-pc-linux-gnu-lf95... no
+checking for x86_64-pc-linux-gnu-gfortran... x86_64-pc-linux-gnu-gfortran
+checking whether we are using the GNU Fortran 77 compiler... yes
+checking whether x86_64-pc-linux-gnu-gfortran accepts -g... yes
+checking the maximum length of command line arguments... 32768
+checking command to parse /usr/bin/x86_64-pc-linux-gnu-nm -B output from x86_64-pc-linux-gnu-gcc object... ok
+checking for objdir... .libs
+checking for x86_64-pc-linux-gnu-ar... x86_64-pc-linux-gnu-ar
+checking for x86_64-pc-linux-gnu-ranlib... x86_64-pc-linux-gnu-ranlib
+checking for x86_64-pc-linux-gnu-strip... x86_64-pc-linux-gnu-strip
+checking if x86_64-pc-linux-gnu-gcc static flag  works... yes
+checking if x86_64-pc-linux-gnu-gcc supports -fno-rtti -fno-exceptions... no
+checking for x86_64-pc-linux-gnu-gcc option to produce PIC... -fPIC
+checking if x86_64-pc-linux-gnu-gcc PIC flag -fPIC works... yes
+checking if x86_64-pc-linux-gnu-gcc supports -c -o file.o... yes
+checking whether the x86_64-pc-linux-gnu-gcc linker (/usr/x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... cat: ld.so.conf.d/amdapp_x86.conf: Permission denied
+cat: ld.so.conf.d/amdapp_x86_64.conf: Permission denied
+GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+configure: creating libtool
+appending configuration tag "CXX" to libtool
+checking for ld used by x86_64-pc-linux-gnu-g++... /usr/x86_64-pc-linux-gnu/bin/ld -m elf_x86_64
+checking if the linker (/usr/x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the x86_64-pc-linux-gnu-g++ linker (/usr/x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for x86_64-pc-linux-gnu-g++ option to produce PIC... -fPIC
+checking if x86_64-pc-linux-gnu-g++ PIC flag -fPIC works... yes
+checking if x86_64-pc-linux-gnu-g++ supports -c -o file.o... yes
+checking whether the x86_64-pc-linux-gnu-g++ linker (/usr/x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... cat: ld.so.conf.d/amdapp_x86.conf: Permission denied
+cat: ld.so.conf.d/amdapp_x86_64.conf: Permission denied
+GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+appending configuration tag "F77" to libtool
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking for x86_64-pc-linux-gnu-gfortran option to produce PIC... -fPIC
+checking if x86_64-pc-linux-gnu-gfortran PIC flag -fPIC works... yes
+checking if x86_64-pc-linux-gnu-gfortran supports -c -o file.o... yes
+checking whether the x86_64-pc-linux-gnu-gfortran linker (/usr/x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... cat: ld.so.conf.d/amdapp_x86.conf: Permission denied
+cat: ld.so.conf.d/amdapp_x86_64.conf: Permission denied
+GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking for diff... /usr/bin/diff
+adding -w to diff in regression tests
+adding --unified to diff in regression tests
+checking for snprintf... yes
+checking for vsnprintf... yes
+checking for getdate... yes
+checking for strptime... yes
+checking for libpopt library... yes
+checking for xml2-config... /usr/bin/xml2-config
+checking for libxml - version >= 2.3.8... yes (version 2.8.0)
+checking for ANSI C header files... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking stdbool.h usability... yes
+checking stdbool.h presence... yes
+checking for stdbool.h... yes
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking whether byte ordering is bigendian... no
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking whether x86_64-pc-linux-gnu-gcc supports ISO C99 _Pragma()... yes
+checking how to create empty arrays... []
+checking bitfield ordering in structs... LSBF
+checking for pkg-config... /usr/bin/pkg-config
+checking for libcdio >= 0.72... yes
+checking LIBCDIO_CFLAGS...  
+checking LIBCDIO_LIBS... -lcdio -lm  
+checking for libiso9660 >= 0.72... yes
+checking LIBISO9660_CFLAGS...  
+checking LIBISO9660_LIBS... -liso9660 -lcdio -lm  
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libvcdinfo.pc
+config.status: creating amiga/Makefile
+config.status: creating include/Makefile
+config.status: creating include/libvcd/Makefile
+config.status: creating include/libvcd/version.h
+config.status: creating lib/Makefile
+config.status: creating frontends/Makefile
+config.status: creating frontends/xml/Makefile
+config.status: creating frontends/cli/Makefile
+config.status: creating docs/Makefile
+config.status: creating docs/doxygen/Doxyfile
+config.status: creating example/Makefile
+config.status: creating test/check_common_fn
+config.status: creating test/Makefile
+config.status: creating vcdimager.spec
+config.status: creating config.h
+config.status: executing depfiles commands
+
+Setup:
+  Install path:     /usr
+  Build CLI FE:	    yes
+  Build XML FE:	    yes
+  Maintainer mode:  no
+
+>>> Source configured.
+>>> Compiling source in /var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23 ...
+make -j10 
+make  all-recursive
+make[1]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23'
+Making all in include
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include'
+Making all in libvcd
+make[3]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include/libvcd'
+make  all-am
+make[4]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include/libvcd'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include/libvcd'
+make[3]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include/libvcd'
+make[3]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include'
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include'
+Making all in lib
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/lib'
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o info.lo info.c
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o inf.lo inf.c
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o info_private.lo info_private.c
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o vcd_read.lo vcd_read.c
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o vcd.lo vcd.c
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o data_structures.lo data_structures.c
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o directory.lo directory.c
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o files.lo files.c
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o image.lo image.c
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o image_bincue.lo image_bincue.c
+mkdir .libs
+mkdir .libs
+mkdir .libs
+mkdir .libs
+mkdir: cannot create directory '.libs': File exists
+mkdir: cannot create directory '.libs': File exists
+mkdir: cannot create directory '.libs': File exists
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c data_structures.c  -fPIC -DPIC -o .libs/data_structures.o
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c files.c  -fPIC -DPIC -o .libs/files.o
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c inf.c  -fPIC -DPIC -o .libs/inf.o
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c info_private.c  -fPIC -DPIC -o .libs/info_private.o
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c image_bincue.c  -fPIC -DPIC -o .libs/image_bincue.o
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c image.c  -fPIC -DPIC -o .libs/image.o
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c directory.c  -fPIC -DPIC -o .libs/directory.o
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c info.c  -fPIC -DPIC -o .libs/info.o
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c vcd_read.c  -fPIC -DPIC -o .libs/vcd_read.o
+In file included from image_sink.h:25:0,
+                 from image.c:34:
+../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image.c:26:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image.c:34:
+../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image.c:26:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_bincue.c:39:
+../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image_bincue.c:29:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_bincue.c:39:
+../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image_bincue.c:29:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_bincue.c:39:
+../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image_bincue.c:29:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_bincue.c:39:
+../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image_bincue.c:29:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_bincue.c:39:
+../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image_bincue.c:29:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_bincue.c:39:
+../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image_bincue.c:29:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_bincue.c:39:
+../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image_bincue.c:29:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image.c:34:
+../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image.c:26:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image.c:34:
+../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image.c:26:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image.c:34:
+../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image.c:26:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image.c:34:
+../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image.c:26:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image.c:34:
+../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image.c:26:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+In file included from info_private.h:30:0,
+                 from info_private.c:61:
+../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from info_private.c:49:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from info_private.h:30:0,
+                 from info_private.c:61:
+../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from info_private.c:49:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from info_private.h:30:0,
+                 from info_private.c:61:
+../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from info_private.c:49:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from info_private.h:30:0,
+                 from info_private.c:61:
+../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from info_private.c:49:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from info_private.h:30:0,
+                 from info_private.c:61:
+../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from info_private.c:49:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from info_private.h:30:0,
+                 from info_private.c:61:
+../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from info_private.c:49:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from info_private.h:30:0,
+                 from info_private.c:61:
+../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from info_private.c:49:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from files.c:45:
+../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from files.c:30:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from files.c:45:
+../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from files.c:30:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from files.c:45:
+../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from files.c:30:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from files.c:45:
+../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from files.c:30:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from files.c:45:
+../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from files.c:30:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from files.c:45:
+../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from files.c:30:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from files.c:45:
+../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from files.c:30:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from vcd.h:27,
+                 from pbc.h:29,
+                 from info.c:30:
+../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from info_private.h:33,
+                 from info.c:28:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from vcd.h:27,
+                 from pbc.h:29,
+                 from info.c:30:
+../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from info_private.h:33,
+                 from info.c:28:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from vcd.h:27,
+                 from pbc.h:29,
+                 from info.c:30:
+../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from info_private.h:33,
+                 from info.c:28:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from vcd.h:27,
+                 from pbc.h:29,
+                 from info.c:30:
+../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from info_private.h:33,
+                 from info.c:28:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from vcd.h:27,
+                 from pbc.h:29,
+                 from info.c:30:
+../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from info_private.h:33,
+                 from info.c:28:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from vcd.h:27,
+                 from pbc.h:29,
+                 from info.c:30:
+../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from info_private.h:33,
+                 from info.c:28:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from vcd.h:27,
+                 from pbc.h:29,
+                 from info.c:30:
+../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from info_private.h:33,
+                 from info.c:28:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o image_cdrdao.lo image_cdrdao.c
+In file included from info_private.h:30:0,
+                 from inf.c:60:
+../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from inf.c:52:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from info_private.h:30:0,
+                 from inf.c:60:
+../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from inf.c:52:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from info_private.h:30:0,
+                 from inf.c:60:
+../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from inf.c:52:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from info_private.h:30:0,
+                 from inf.c:60:
+../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from inf.c:52:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from info_private.h:30:0,
+                 from inf.c:60:
+../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from inf.c:52:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from info_private.h:30:0,
+                 from inf.c:60:
+../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from inf.c:52:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from info_private.h:30:0,
+                 from inf.c:60:
+../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from inf.c:52:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o image_nrg.lo image_nrg.c
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c vcd.c  -fPIC -DPIC -o .libs/vcd.o
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o logging.lo logging.c
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o mpeg.lo mpeg.c
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o mpeg_stream.lo mpeg_stream.c
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o pbc.lo pbc.c
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from dict.h:29,
+                 from vcd.c:45:
+../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from vcd.c:31:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from dict.h:29,
+                 from vcd.c:45:
+../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from vcd.c:31:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from dict.h:29,
+                 from vcd.c:45:
+../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from vcd.c:31:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from dict.h:29,
+                 from vcd.c:45:
+../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from vcd.c:31:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from dict.h:29,
+                 from vcd.c:45:
+../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from vcd.c:31:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from dict.h:29,
+                 from vcd.c:45:
+../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from vcd.c:31:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from dict.h:29,
+                 from vcd.c:45:
+../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from vcd.c:31:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+vcd.c: In function '_finalize_vcd_iso_track_allocation':
+vcd.c:1080:12: warning: variable 'dir_secs' set but not used [-Wunused-but-set-variable]
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o salloc.lo salloc.c
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c image_nrg.c  -fPIC -DPIC -o .libs/image_nrg.o
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c logging.c  -fPIC -DPIC -o .libs/logging.o
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c image_cdrdao.c  -fPIC -DPIC -o .libs/image_cdrdao.o
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c pbc.c  -fPIC -DPIC -o .libs/pbc.o
+In file included from image_sink.h:25:0,
+                 from image_nrg.c:43:
+../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image_nrg.c:33:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_nrg.c:43:
+../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image_nrg.c:33:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_nrg.c:43:
+../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image_nrg.c:33:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_nrg.c:43:
+../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image_nrg.c:33:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_nrg.c:43:
+../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image_nrg.c:33:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_nrg.c:43:
+../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image_nrg.c:33:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_nrg.c:43:
+../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from image_nrg.c:33:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+image_nrg.c:75:3: warning: 'packed' attribute ignored for field of type 'uint8_t' [-Wattributes]
+image_nrg.c:76:3: warning: 'packed' attribute ignored for field of type 'uint8_t' [-Wattributes]
+image_nrg.c:77:3: warning: 'packed' attribute ignored for field of type 'uint8_t' [-Wattributes]
+image_nrg.c:78:3: warning: 'packed' attribute ignored for field of type 'uint8_t' [-Wattributes]
+image_nrg.c:85:3: warning: 'packed' attribute ignored for field of type 'char[]' [-Wattributes]
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o sector.lo sector.c
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c mpeg_stream.c  -fPIC -DPIC -o .libs/mpeg_stream.o
+In file included from image_sink.h:25:0,
+                 from image_cdrdao.c:38:
+../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from /usr/include/cdio/iso9660.h:41,
+                 from image_cdrdao.c:30:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_cdrdao.c:38:
+../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from /usr/include/cdio/iso9660.h:41,
+                 from image_cdrdao.c:30:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_cdrdao.c:38:
+../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from /usr/include/cdio/iso9660.h:41,
+                 from image_cdrdao.c:30:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_cdrdao.c:38:
+../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from /usr/include/cdio/iso9660.h:41,
+                 from image_cdrdao.c:30:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_cdrdao.c:38:
+../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from /usr/include/cdio/iso9660.h:41,
+                 from image_cdrdao.c:30:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_cdrdao.c:38:
+../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from /usr/include/cdio/iso9660.h:41,
+                 from image_cdrdao.c:30:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from image_cdrdao.c:38:
+../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from /usr/include/cdio/iso9660.h:41,
+                 from image_cdrdao.c:30:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c salloc.c  -fPIC -DPIC -o .libs/salloc.o
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from pbc.c:44:
+../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from pbc.c:29:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from pbc.c:44:
+../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from pbc.c:29:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from pbc.c:44:
+../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from pbc.c:29:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from pbc.c:44:
+../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from pbc.c:29:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from pbc.c:44:
+../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from pbc.c:29:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from pbc.c:44:
+../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from pbc.c:29:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from image_sink.h:25:0,
+                 from obj.h:30,
+                 from pbc.c:44:
+../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from pbc.c:29:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c mpeg.c  -fPIC -DPIC -o .libs/mpeg.o
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o stream.lo stream.c
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o stream_stdio.lo stream_stdio.c
+mpeg.c: In function '_parse_gop_header':
+mpeg.c:238:8: warning: variable 'drop_flag' set but not used [-Wunused-but-set-variable]
+/bin/sh ../libtool --tag=CC --mode=compile x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c -o util.lo util.c
+echo 'VCDINFO_0 {' > libvcdinfo.la.ver
+echo "  global:" >> libvcdinfo.la.ver
+objs=`for obj in info.lo inf.lo info_private.lo vcd_read.lo; do sed -ne "s/^pic_object='\(.*\)'$/\1/p" $obj; done`; \
+nm ${objs} | sed -n -e 's/^.*[ 	][ABCDGIRSTW][ABCDGIRSTW]*[ 	][ 	]*\([_A-Za-z][_A-Za-z0-9]*\)$/    \1;/p' | sort | uniq >> libvcdinfo.la.ver
+echo '};' >> libvcdinfo.la.ver
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c sector.c  -fPIC -DPIC -o .libs/sector.o
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c stream.c  -fPIC -DPIC -o .libs/stream.o
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c stream_stdio.c  -fPIC -DPIC -o .libs/stream_stdio.o
+ x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I../include/ -I../lib/ -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c util.c  -fPIC -DPIC -o .libs/util.o
+/bin/sh ../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o libvcd.la   vcd.lo data_structures.lo directory.lo files.lo image.lo image_bincue.lo image_cdrdao.lo image_nrg.lo logging.lo mpeg.lo mpeg_stream.lo pbc.lo salloc.lo sector.lo stream.lo stream_stdio.lo util.lo -lcdio -lm   -liso9660 -lcdio -lm   -lm
+x86_64-pc-linux-gnu-ar cru .libs/libvcd.a .libs/vcd.o .libs/data_structures.o .libs/directory.o .libs/files.o .libs/image.o .libs/image_bincue.o .libs/image_cdrdao.o .libs/image_nrg.o .libs/logging.o .libs/mpeg.o .libs/mpeg_stream.o .libs/pbc.o .libs/salloc.o .libs/sector.o .libs/stream.o .libs/stream_stdio.o .libs/util.o
+x86_64-pc-linux-gnu-ranlib .libs/libvcd.a
+creating libvcd.la
+(cd .libs && rm -f libvcd.la && ln -s ../libvcd.la libvcd.la)
+/bin/sh ../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o libvcdinfo.la -rpath /usr/lib64 -version-info 2:0:2 -Wl,--version-script=libvcdinfo.la.ver info.lo inf.lo info_private.lo vcd_read.lo -lcdio -lm   -liso9660 -lcdio -lm   ../lib/libvcd.la -lm
+x86_64-pc-linux-gnu-gcc -shared  .libs/info.o .libs/inf.o .libs/info_private.o .libs/vcd_read.o -Wl,--whole-archive ../lib/.libs/libvcd.a -Wl,--no-whole-archive  -liso9660 -lcdio -lm  -march=native -Wl,-O1 -Wl,--as-needed -Wl,--version-script=libvcdinfo.la.ver -Wl,-soname -Wl,libvcdinfo.so.0 -o .libs/libvcdinfo.so.0.2.0
+(cd .libs && rm -f libvcdinfo.so.0 && ln -s libvcdinfo.so.0.2.0 libvcdinfo.so.0)
+(cd .libs && rm -f libvcdinfo.so && ln -s libvcdinfo.so.0.2.0 libvcdinfo.so)
+creating libvcdinfo.la
+(cd .libs && rm -f libvcdinfo.la && ln -s ../libvcdinfo.la libvcdinfo.la)
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/lib'
+Making all in frontends
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends'
+Making all in cli
+make[3]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/cli'
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I../.. -I../..  -I../../include/ -I../../lib/      -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c vcdimager.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I../.. -I../..  -I../../include/ -I../../lib/      -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c cdxa2mpeg.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I../.. -I../..  -I../../include/ -I../../lib/      -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c vcd-info.c
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from cdxa2mpeg.c:44:
+../../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/sector.h:67,
+                 from cdxa2mpeg.c:36:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from cdxa2mpeg.c:44:
+../../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/sector.h:67,
+                 from cdxa2mpeg.c:36:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from cdxa2mpeg.c:44:
+../../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/sector.h:67,
+                 from cdxa2mpeg.c:36:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from cdxa2mpeg.c:44:
+../../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/sector.h:67,
+                 from cdxa2mpeg.c:36:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from cdxa2mpeg.c:44:
+../../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/sector.h:67,
+                 from cdxa2mpeg.c:36:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from cdxa2mpeg.c:44:
+../../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/sector.h:67,
+                 from cdxa2mpeg.c:36:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from cdxa2mpeg.c:44:
+../../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/sector.h:67,
+                 from cdxa2mpeg.c:36:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+cdxa2mpeg.c: In function ‘handler_data’:
+cdxa2mpeg.c:192:12: warning: ignoring return value of ‘ftruncate’, declared with attribute warn_unused_result [-Wunused-result]
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcd-info.c:54:
+../../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from vcd-info.c:41:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcd-info.c:54:
+../../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from vcd-info.c:41:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcd-info.c:54:
+../../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from vcd-info.c:41:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcd-info.c:54:
+../../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from vcd-info.c:41:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcd-info.c:54:
+../../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from vcd-info.c:41:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcd-info.c:54:
+../../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from vcd-info.c:41:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcd-info.c:54:
+../../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from vcd-info.c:41:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+vcd-info.c: In function ‘main’:
+vcd-info.c:1670:26: warning: operation on ‘gl.show.scandata’ may be undefined [-Wsequence-point]
+/bin/sh ../../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o cdxa2mpeg  cdxa2mpeg.o -liso9660 -lcdio -lm   ../../lib/libvcd.la -lpopt -lm
+/bin/sh ../../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o vcdimager  vcdimager.o -liso9660 -lcdio -lm   ../../lib/libvcd.la -lpopt -lcdio -lm   -lm
+mkdir .libs
+x86_64-pc-linux-gnu-gcc -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -Wl,-O1 -Wl,--as-needed -o cdxa2mpeg cdxa2mpeg.o  ../../lib/.libs/libvcd.a -liso9660 -lcdio -lpopt -lm
+x86_64-pc-linux-gnu-gcc -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -Wl,-O1 -Wl,--as-needed -o vcdimager vcdimager.o  ../../lib/.libs/libvcd.a -liso9660 -lpopt -lcdio -lm
+/bin/sh ../../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o vcd-info  vcd-info.o -liso9660 -lcdio -lm   ../../lib/libvcdinfo.la ../../lib/libvcd.la -lpopt -lcdio -lm   -liso9660 -lcdio -lm   -lm
+x86_64-pc-linux-gnu-gcc -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -Wl,-O1 -Wl,--as-needed -o .libs/vcd-info vcd-info.o  ../../lib/.libs/libvcdinfo.so ../../lib/.libs/libvcd.a -lpopt -liso9660 -lcdio -lm
+creating vcd-info
+make[3]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/cli'
+Making all in xml
+make[3]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/xml'
+(sed 's/\"/\\"/g' | gawk 'BEGIN { print "const char videocd_dtd[] = \\" } { print " \"" $0 "\\n\" \\" } END { print ";" }') < ./videocd.dtd > videocd_dtd.inc
+make  all-am
+make[4]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/xml'
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I../.. -I../..  -I../../include/ -I../../lib/    -I/usr/include/libxml2    -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c vcd_xml_build.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I../.. -I../..  -I../../include/ -I../../lib/    -I/usr/include/libxml2    -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c vcd_xml_common.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I../.. -I../..  -I../../include/ -I../../lib/    -I/usr/include/libxml2    -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c vcd_xml_dtd.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I../.. -I../..  -I../../include/ -I../../lib/    -I/usr/include/libxml2    -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c vcd_xml_master.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I../.. -I../..  -I../../include/ -I../../lib/    -I/usr/include/libxml2    -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c vcd_xml_parse.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I../.. -I../..  -I../../include/ -I../../lib/    -I/usr/include/libxml2    -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c vcd_xml_gen.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I../.. -I../..  -I../../include/ -I../../lib/    -I/usr/include/libxml2    -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c vcd_xml_dump.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I../.. -I../..  -I../../include/ -I../../lib/    -I/usr/include/libxml2    -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c vcd_xml_rip.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I../.. -I../..  -I../../include/ -I../../lib/    -I/usr/include/libxml2    -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c vcd_xml_minfo.c
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from vcd_xml_common.c:30:
+../../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../lib/vcd_assert.h:26,
+                 from vcd_xml_common.c:29:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from vcd_xml_common.c:30:
+../../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../lib/vcd_assert.h:26,
+                 from vcd_xml_common.c:29:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from vcd_xml_common.c:30:
+../../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../lib/vcd_assert.h:26,
+                 from vcd_xml_common.c:29:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from vcd_xml_common.c:30:
+../../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../lib/vcd_assert.h:26,
+                 from vcd_xml_common.c:29:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from vcd_xml_common.c:30:
+../../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../lib/vcd_assert.h:26,
+                 from vcd_xml_common.c:29:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from vcd_xml_common.c:30:
+../../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../lib/vcd_assert.h:26,
+                 from vcd_xml_common.c:29:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from vcd_xml_common.c:30:
+../../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../lib/vcd_assert.h:26,
+                 from vcd_xml_common.c:29:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_parse.h:24,
+                 from vcd_xml_parse.c:25:
+../../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from vcdxml.h:28,
+                 from vcd_xml_parse.h:24,
+                 from vcd_xml_parse.c:25:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_parse.h:24,
+                 from vcd_xml_parse.c:25:
+../../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from vcdxml.h:28,
+                 from vcd_xml_parse.h:24,
+                 from vcd_xml_parse.c:25:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_parse.h:24,
+                 from vcd_xml_parse.c:25:
+../../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from vcdxml.h:28,
+                 from vcd_xml_parse.h:24,
+                 from vcd_xml_parse.c:25:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_parse.h:24,
+                 from vcd_xml_parse.c:25:
+../../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from vcdxml.h:28,
+                 from vcd_xml_parse.h:24,
+                 from vcd_xml_parse.c:25:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_parse.h:24,
+                 from vcd_xml_parse.c:25:
+../../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from vcdxml.h:28,
+                 from vcd_xml_parse.h:24,
+                 from vcd_xml_parse.c:25:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_parse.h:24,
+                 from vcd_xml_parse.c:25:
+../../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from vcdxml.h:28,
+                 from vcd_xml_parse.h:24,
+                 from vcd_xml_parse.c:25:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_parse.h:24,
+                 from vcd_xml_parse.c:25:
+../../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from vcdxml.h:28,
+                 from vcd_xml_parse.h:24,
+                 from vcd_xml_parse.c:25:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_rip.c:24:
+../../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from ../../lib/vcd_read.h:25,
+                 from vcd_xml_rip.c:23:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_rip.c:24:
+../../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from ../../lib/vcd_read.h:25,
+                 from vcd_xml_rip.c:23:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_rip.c:24:
+../../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from ../../lib/vcd_read.h:25,
+                 from vcd_xml_rip.c:23:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_rip.c:24:
+../../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from ../../lib/vcd_read.h:25,
+                 from vcd_xml_rip.c:23:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_rip.c:24:
+../../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from ../../lib/vcd_read.h:25,
+                 from vcd_xml_rip.c:23:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_rip.c:24:
+../../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from ../../lib/vcd_read.h:25,
+                 from vcd_xml_rip.c:23:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_rip.c:24:
+../../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from /usr/include/cdio/cdio.h:35,
+                 from ../../lib/vcd_read.h:25,
+                 from vcd_xml_rip.c:23:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from vcd_xml_minfo.c:37:
+../../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../lib/mpeg_stream.h:24,
+                 from vcd_xml_minfo.c:34:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from vcd_xml_minfo.c:37:
+../../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../lib/mpeg_stream.h:24,
+                 from vcd_xml_minfo.c:34:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from vcd_xml_minfo.c:37:
+../../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../lib/mpeg_stream.h:24,
+                 from vcd_xml_minfo.c:34:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from vcd_xml_minfo.c:37:
+../../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../lib/mpeg_stream.h:24,
+                 from vcd_xml_minfo.c:34:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from vcd_xml_minfo.c:37:
+../../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../lib/mpeg_stream.h:24,
+                 from vcd_xml_minfo.c:34:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from vcd_xml_minfo.c:37:
+../../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../lib/mpeg_stream.h:24,
+                 from vcd_xml_minfo.c:34:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from vcd_xml_minfo.c:37:
+../../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../lib/mpeg_stream.h:24,
+                 from vcd_xml_minfo.c:34:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+vcd_xml_rip.c: In function ‘_parse_pbc’:
+vcd_xml_rip.c:786:7: warning: variable ‘rc’ set but not used [-Wunused-but-set-variable]
+vcd_xml_rip.c: In function ‘main’:
+vcd_xml_rip.c:1438:42: warning: comparison between ‘enum <anonymous>’ and ‘enum <anonymous>’ [-Wenum-compare]
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcd_xml_gen.c:44:
+../../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../include/libvcd/sector.h:24,
+                 from vcd_xml_gen.c:40:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcd_xml_gen.c:44:
+../../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../include/libvcd/sector.h:24,
+                 from vcd_xml_gen.c:40:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcd_xml_gen.c:44:
+../../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../include/libvcd/sector.h:24,
+                 from vcd_xml_gen.c:40:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcd_xml_gen.c:44:
+../../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../include/libvcd/sector.h:24,
+                 from vcd_xml_gen.c:40:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcd_xml_gen.c:44:
+../../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../include/libvcd/sector.h:24,
+                 from vcd_xml_gen.c:40:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcd_xml_gen.c:44:
+../../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../include/libvcd/sector.h:24,
+                 from vcd_xml_gen.c:40:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcd_xml_gen.c:44:
+../../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../include/libvcd/sector.h:24,
+                 from vcd_xml_gen.c:40:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from vcd_xml_build.c:42:
+../../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../include/libvcd/logging.h:25,
+                 from vcd_xml_build.c:38:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from vcd_xml_build.c:42:
+../../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../include/libvcd/logging.h:25,
+                 from vcd_xml_build.c:38:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from vcd_xml_build.c:42:
+../../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../include/libvcd/logging.h:25,
+                 from vcd_xml_build.c:38:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from vcd_xml_build.c:42:
+../../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../include/libvcd/logging.h:25,
+                 from vcd_xml_build.c:38:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from vcd_xml_build.c:42:
+../../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../include/libvcd/logging.h:25,
+                 from vcd_xml_build.c:38:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from vcd_xml_build.c:42:
+../../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../include/libvcd/logging.h:25,
+                 from vcd_xml_build.c:38:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from vcd_xml_build.c:42:
+../../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from ../../include/libvcd/logging.h:25,
+                 from vcd_xml_build.c:38:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_dump.h:24,
+                 from vcd_xml_dump.c:37:
+../../config.h:74:0: warning: "PACKAGE" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from vcdxml.h:28,
+                 from vcd_xml_dump.h:24,
+                 from vcd_xml_dump.c:37:
+/usr/include/cdio/cdio_config.h:306:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_dump.h:24,
+                 from vcd_xml_dump.c:37:
+../../config.h:77:0: warning: "PACKAGE_BUGREPORT" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from vcdxml.h:28,
+                 from vcd_xml_dump.h:24,
+                 from vcd_xml_dump.c:37:
+/usr/include/cdio/cdio_config.h:309:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_dump.h:24,
+                 from vcd_xml_dump.c:37:
+../../config.h:80:0: warning: "PACKAGE_NAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from vcdxml.h:28,
+                 from vcd_xml_dump.h:24,
+                 from vcd_xml_dump.c:37:
+/usr/include/cdio/cdio_config.h:312:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_dump.h:24,
+                 from vcd_xml_dump.c:37:
+../../config.h:83:0: warning: "PACKAGE_STRING" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from vcdxml.h:28,
+                 from vcd_xml_dump.h:24,
+                 from vcd_xml_dump.c:37:
+/usr/include/cdio/cdio_config.h:315:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_dump.h:24,
+                 from vcd_xml_dump.c:37:
+../../config.h:86:0: warning: "PACKAGE_TARNAME" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from vcdxml.h:28,
+                 from vcd_xml_dump.h:24,
+                 from vcd_xml_dump.c:37:
+/usr/include/cdio/cdio_config.h:318:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_dump.h:24,
+                 from vcd_xml_dump.c:37:
+../../config.h:89:0: warning: "PACKAGE_VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from vcdxml.h:28,
+                 from vcd_xml_dump.h:24,
+                 from vcd_xml_dump.c:37:
+/usr/include/cdio/cdio_config.h:324:0: note: this is the location of the previous definition
+In file included from ../../lib/image_sink.h:25:0,
+                 from ../../lib/vcd.h:27,
+                 from ../../lib/pbc.h:29,
+                 from vcdxml.h:33,
+                 from vcd_xml_dump.h:24,
+                 from vcd_xml_dump.c:37:
+../../config.h:104:0: warning: "VERSION" redefined [enabled by default]
+In file included from /usr/include/cdio/types.h:34:0,
+                 from ../../include/libvcd/types.h:24,
+                 from vcdxml.h:28,
+                 from vcd_xml_dump.h:24,
+                 from vcd_xml_dump.c:37:
+/usr/include/cdio/cdio_config.h:352:0: note: this is the location of the previous definition
+/bin/sh ../../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o vcdxminfo  vcd_xml_common.o vcd_xml_minfo.o -lxml2 -lz -lm -lpopt ../../lib/libvcd.la -lcdio -lm   -liso9660 -lcdio -lm   -lm
+In file included from /usr/include/string.h:638:0,
+                 from vcdxml.h:25,
+                 from vcd_xml_rip.c:24:
+In function ‘strncat’,
+    inlined from ‘_parse_isofs_r’ at vcd_xml_rip.c:161:15:
+/usr/include/bits/string3.h:150:3: warning: call to __builtin___strncat_chk might overflow destination buffer [enabled by default]
+mkdir .libs
+x86_64-pc-linux-gnu-gcc -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -Wl,-O1 -Wl,--as-needed -o vcdxminfo vcd_xml_common.o vcd_xml_minfo.o  -lxml2 -lz -lpopt ../../lib/.libs/libvcd.a -liso9660 -lcdio -lm
+/bin/sh ../../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o vcdxgen  vcd_xml_gen.o vcd_xml_common.o vcd_xml_dump.o -lxml2 -lz -lm -lpopt ../../lib/libvcd.la -lcdio -lm   -liso9660 -lcdio -lm   -lm
+/bin/sh ../../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o vcdxbuild  vcd_xml_build.o vcd_xml_common.o vcd_xml_dtd.o vcd_xml_master.o vcd_xml_parse.o -lxml2 -lz -lm ../../lib/libvcd.la -lpopt -lcdio -lm   -liso9660 -lcdio -lm   -lm
+/bin/sh ../../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o vcdxrip  vcd_xml_rip.o vcd_xml_common.o vcd_xml_dump.o -lxml2 -lz -lm -liso9660 -lcdio -lm   ../../lib/libvcdinfo.la ../../lib/libvcd.la -lpopt -lcdio -lm   -lm
+x86_64-pc-linux-gnu-gcc -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -Wl,-O1 -Wl,--as-needed -o vcdxgen vcd_xml_gen.o vcd_xml_common.o vcd_xml_dump.o  -lxml2 -lz -lpopt ../../lib/.libs/libvcd.a -liso9660 -lcdio -lm
+x86_64-pc-linux-gnu-gcc -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -Wl,-O1 -Wl,--as-needed -o vcdxbuild vcd_xml_build.o vcd_xml_common.o vcd_xml_dtd.o vcd_xml_master.o vcd_xml_parse.o  -lxml2 -lz ../../lib/.libs/libvcd.a -lpopt -liso9660 -lcdio -lm
+x86_64-pc-linux-gnu-gcc -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -Wl,-O1 -Wl,--as-needed -o .libs/vcdxrip vcd_xml_rip.o vcd_xml_common.o vcd_xml_dump.o  -lxml2 -lz ../../lib/.libs/libvcdinfo.so ../../lib/.libs/libvcd.a -liso9660 -lpopt -lcdio -lm
+creating vcdxrip
+make[4]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/xml'
+make[3]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/xml'
+make[3]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends'
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends'
+Making all in test
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/test'
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I..  -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c mpegscan.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I..  -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c mpegscan2.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I..  -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c testimage.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I..  -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c testassert.c
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I..  -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c testvcd.c
+/bin/sh ../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o testassert  testassert.o ../lib/libvcd.la -liso9660 -lcdio -lm   -lm
+/bin/sh ../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o mpegscan  mpegscan.o ../lib/libvcd.la -liso9660 -lcdio -lm   -lm
+/bin/sh ../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o testvcd  testvcd.o -liso9660 -lcdio -lm   ../lib/libvcdinfo.la ../lib/libvcd.la -lm
+/bin/sh ../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o testimage  testimage.o ../lib/libvcd.la -liso9660 -lcdio -lm   -lm
+/bin/sh ../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o mpegscan2  mpegscan2.o ../lib/libvcd.la -liso9660 -lcdio -lm   -lm
+mkdir .libs
+x86_64-pc-linux-gnu-gcc -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -Wl,-O1 -Wl,--as-needed -o testassert testassert.o  ../lib/.libs/libvcd.a -liso9660 -lcdio -lm
+x86_64-pc-linux-gnu-gcc -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -Wl,-O1 -Wl,--as-needed -o mpegscan mpegscan.o  ../lib/.libs/libvcd.a -liso9660 -lcdio -lm
+x86_64-pc-linux-gnu-gcc -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -Wl,-O1 -Wl,--as-needed -o testimage testimage.o  ../lib/.libs/libvcd.a -liso9660 -lcdio -lm
+x86_64-pc-linux-gnu-gcc -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -Wl,-O1 -Wl,--as-needed -o mpegscan2 mpegscan2.o  ../lib/.libs/libvcd.a -liso9660 -lcdio -lm
+x86_64-pc-linux-gnu-gcc -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -Wl,-O1 -Wl,--as-needed -o .libs/testvcd testvcd.o  ../lib/.libs/libvcdinfo.so ../lib/.libs/libvcd.a -liso9660 -lcdio -lm
+creating testvcd
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/test'
+Making all in amiga
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/amiga'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/amiga'
+Making all in docs
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/docs'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/docs'
+Making all in example
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/example'
+x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I. -I. -I.. -I.. -I../include/ -I../lib/     -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -c info1.c
+/bin/sh ../libtool --tag=CC --mode=link x86_64-pc-linux-gnu-gcc  -march=native -O2 -pipe -g0  -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare  -Wl,-O1 -Wl,--as-needed -o info1  info1.o ../lib/libvcdinfo.la ../lib/libvcd.la -liso9660 -lcdio -lm   -lm
+mkdir .libs
+x86_64-pc-linux-gnu-gcc -march=native -O2 -pipe -g0 -Wall -Wchar-subscripts -Wmissing-prototypes -Wmissing-declarations -Wunused -Wpointer-arith -Wwrite-strings -Wnested-externs -Wno-sign-compare -Wl,-O1 -Wl,--as-needed -o .libs/info1 info1.o  ../lib/.libs/libvcdinfo.so ../lib/.libs/libvcd.a -liso9660 -lcdio -lm
+creating info1
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/example'
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23'
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23'
+make[1]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23'
+>>> Source compiled.
+ [32;01m*[0m Skipping make test/check due to ebuild restriction.
+>>> Test phase [explicitly disabled]: media-video/vcdimager-0.7.23-r1
+
+>>> Install vcdimager-0.7.23-r1 into /var/tmp/portage/media-video/vcdimager-0.7.23-r1/image/ category media-video
+make -j10 DESTDIR=/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image/ install 
+Making install in include
+make[1]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include'
+Making install in libvcd
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include/libvcd'
+make  install-am
+make[3]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include/libvcd'
+make[4]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include/libvcd'
+make[4]: Nothing to be done for `install-exec-am'.
+test -z "/usr/include/libvcd" || mkdir -p -- "/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/include/libvcd"
+ /usr/bin/install -c -m 644 'files.h' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/include/libvcd/files.h'
+ /usr/bin/install -c -m 644 'files_private.h' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/include/libvcd/files_private.h'
+ /usr/bin/install -c -m 644 'inf.h' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/include/libvcd/inf.h'
+ /usr/bin/install -c -m 644 'info.h' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/include/libvcd/info.h'
+ /usr/bin/install -c -m 644 'logging.h' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/include/libvcd/logging.h'
+ /usr/bin/install -c -m 644 'sector.h' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/include/libvcd/sector.h'
+ /usr/bin/install -c -m 644 'types.h' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/include/libvcd/types.h'
+ /usr/bin/install -c -m 644 'version.h' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/include/libvcd/version.h'
+make[4]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include/libvcd'
+make[3]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include/libvcd'
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include/libvcd'
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include'
+make[3]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include'
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include'
+make[1]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/include'
+Making install in lib
+make[1]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/lib'
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/lib'
+test -z "/usr/lib64" || mkdir -p -- "/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/lib64"
+make[2]: Nothing to be done for `install-data-am'.
+ /bin/sh ../libtool --mode=install /usr/bin/install -c  'libvcdinfo.la' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/lib64/libvcdinfo.la'
+/usr/bin/install -c .libs/libvcdinfo.so.0.2.0 /var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/lib64/libvcdinfo.so.0.2.0
+(cd /var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/lib64 && rm -f libvcdinfo.so.0 && ln -s libvcdinfo.so.0.2.0 libvcdinfo.so.0)
+(cd /var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/lib64 && rm -f libvcdinfo.so && ln -s libvcdinfo.so.0.2.0 libvcdinfo.so)
+/usr/bin/install -c .libs/libvcdinfo.lai /var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/lib64/libvcdinfo.la
+libtool: install: warning: remember to run `libtool --finish /usr/lib64'
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/lib'
+make[1]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/lib'
+Making install in frontends
+make[1]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends'
+Making install in cli
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/cli'
+make[3]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/cli'
+test -z "/usr/bin" || mkdir -p -- "/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin"
+test -z "/usr/share/man/man1" || mkdir -p -- "/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/man/man1"
+  /bin/sh ../../libtool --mode=install /usr/bin/install -c 'vcdimager' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin/vcdimager'
+ /usr/bin/install -c -m 644 './vcdimager.1' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/man/man1/vcdimager.1'
+ /usr/bin/install -c -m 644 './cdxa2mpeg.1' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/man/man1/cdxa2mpeg.1'
+ /usr/bin/install -c -m 644 './vcd-info.1' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/man/man1/vcd-info.1'
+/usr/bin/install -c vcdimager /var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin/vcdimager
+  /bin/sh ../../libtool --mode=install /usr/bin/install -c 'cdxa2mpeg' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin/cdxa2mpeg'
+/usr/bin/install -c cdxa2mpeg /var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin/cdxa2mpeg
+  /bin/sh ../../libtool --mode=install /usr/bin/install -c 'vcd-info' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin/vcd-info'
+libtool: install: warning: `../../lib/libvcdinfo.la' has not been installed in `/usr/lib64'
+/usr/bin/install -c .libs/vcd-info /var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin/vcd-info
+make[3]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/cli'
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/cli'
+Making install in xml
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/xml'
+make  install-am
+make[3]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/xml'
+make[4]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/xml'
+test -z "/usr/bin" || mkdir -p -- "/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin"
+test -z "/usr/share/man/man1" || mkdir -p -- "/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/man/man1"
+  /bin/sh ../../libtool --mode=install /usr/bin/install -c 'vcdxbuild' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin/vcdxbuild'
+ /usr/bin/install -c -m 644 './vcdxbuild.1' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/man/man1/vcdxbuild.1'
+ /usr/bin/install -c -m 644 './vcdxgen.1' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/man/man1/vcdxgen.1'
+ /usr/bin/install -c -m 644 './vcdxrip.1' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/man/man1/vcdxrip.1'
+ /usr/bin/install -c -m 644 './vcdxminfo.1' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/man/man1/vcdxminfo.1'
+/usr/bin/install -c vcdxbuild /var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin/vcdxbuild
+  /bin/sh ../../libtool --mode=install /usr/bin/install -c 'vcdxgen' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin/vcdxgen'
+/usr/bin/install -c vcdxgen /var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin/vcdxgen
+  /bin/sh ../../libtool --mode=install /usr/bin/install -c 'vcdxrip' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin/vcdxrip'
+libtool: install: warning: `../../lib/libvcdinfo.la' has not been installed in `/usr/lib64'
+/usr/bin/install -c .libs/vcdxrip /var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin/vcdxrip
+  /bin/sh ../../libtool --mode=install /usr/bin/install -c 'vcdxminfo' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin/vcdxminfo'
+/usr/bin/install -c vcdxminfo /var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/bin/vcdxminfo
+make[4]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/xml'
+make[3]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/xml'
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends/xml'
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends'
+make[3]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends'
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends'
+make[1]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/frontends'
+Making install in test
+make[1]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/test'
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/test'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/test'
+make[1]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/test'
+Making install in amiga
+make[1]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/amiga'
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/amiga'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/amiga'
+make[1]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/amiga'
+Making install in docs
+make[1]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/docs'
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/docs'
+make[2]: Nothing to be done for `install-exec-am'.
+test -z "/usr/share/info" || mkdir -p -- "/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/info"
+ /usr/bin/install -c -m 644 './vcdimager.info' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/info/vcdimager.info'
+ /usr/bin/install -c -m 644 './vcd-info.info' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/info/vcd-info.info'
+ /usr/bin/install -c -m 644 './vcdxrip.info' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/info/vcdxrip.info'
+ install-info --info-dir='/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/info' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/info/vcdimager.info'
+ install-info --info-dir='/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/info' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/info/vcd-info.info'
+ install-info --info-dir='/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/info' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/share/info/vcdxrip.info'
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/docs'
+make[1]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/docs'
+Making install in example
+make[1]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/example'
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/example'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/example'
+make[1]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23/example'
+make[1]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23'
+make[2]: Entering directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23'
+make[2]: Nothing to be done for `install-exec-am'.
+test -z "/usr/lib64/pkgconfig" || mkdir -p -- "/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/lib64/pkgconfig"
+ /usr/bin/install -c -m 644 'libvcdinfo.pc' '/var/tmp/portage/media-video/vcdimager-0.7.23-r1/image//usr/lib64/pkgconfig/libvcdinfo.pc'
+make[2]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23'
+make[1]: Leaving directory `/var/tmp/portage/media-video/vcdimager-0.7.23-r1/work/vcdimager-0.7.23'
+ [32;01m*[0m Removing unnecessary /usr/lib64/libvcdinfo.la (no static archive)
+>>> Completed installing vcdimager-0.7.23-r1 into /var/tmp/portage/media-video/vcdimager-0.7.23-r1/image/
+
+strip: x86_64-pc-linux-gnu-strip --strip-unneeded -R .comment -R .GCC.command.line
+   usr/bin/vcdxgen
+   usr/bin/vcd-info
+   usr/bin/vcdxminfo
+   usr/bin/vcdxrip
+   usr/lib64/libvcdinfo.so.0.2.0
+   usr/bin/vcdimager
+   usr/bin/vcdxbuild
+   usr/bin/cdxa2mpeg
+ecompressdir: xz -9 /usr/share/man
+ecompressdir: xz -9 /usr/share/info
+ecompressdir: xz -9 /usr/share/doc
+ [32;01m*[0m Removing /usr/share/doc
+ [32;01m*[39;49;00m checking 29 files for package collisions
+>>> Merging media-video/vcdimager-0.7.23-r1 to /
+--- /usr/
+--- /usr/share/
+--- /usr/share/info/
+>>> /usr/share/info/vcdimager.info.xz
+>>> /usr/share/info/vcd-info.info.xz
+>>> /usr/share/info/vcdxrip.info.xz
+--- /usr/share/man/
+--- /usr/share/man/man1/
+>>> /usr/share/man/man1/vcdimager.1.xz
+>>> /usr/share/man/man1/cdxa2mpeg.1.xz
+>>> /usr/share/man/man1/vcd-info.1.xz
+>>> /usr/share/man/man1/vcdxbuild.1.xz
+>>> /usr/share/man/man1/vcdxgen.1.xz
+>>> /usr/share/man/man1/vcdxrip.1.xz
+>>> /usr/share/man/man1/vcdxminfo.1.xz
+--- /usr/bin/
+>>> /usr/bin/vcdxminfo
+>>> /usr/bin/vcdxrip
+>>> /usr/bin/vcdxgen
+>>> /usr/bin/vcdxbuild
+>>> /usr/bin/vcd-info
+>>> /usr/bin/cdxa2mpeg
+>>> /usr/bin/vcdimager
+--- /usr/lib64/
+--- /usr/lib64/pkgconfig/
+>>> /usr/lib64/pkgconfig/libvcdinfo.pc
+>>> /usr/lib64/libvcdinfo.so -> libvcdinfo.so.0.2.0
+>>> /usr/lib64/libvcdinfo.so.0 -> libvcdinfo.so.0.2.0
+>>> /usr/lib64/libvcdinfo.so.0.2.0
+--- /usr/include/
+--- /usr/include/libvcd/
+>>> /usr/include/libvcd/version.h
+>>> /usr/include/libvcd/types.h
+>>> /usr/include/libvcd/sector.h
+>>> /usr/include/libvcd/logging.h
+>>> /usr/include/libvcd/info.h
+>>> /usr/include/libvcd/inf.h
+>>> /usr/include/libvcd/files_private.h
+>>> /usr/include/libvcd/files.h
+>>> Safely unmerging already-installed instance...
+No package files given... Grabbing a set.
+--- replaced obj /usr/share/man/man1/vcdxrip.1.xz
+--- replaced obj /usr/share/man/man1/vcdxminfo.1.xz
+--- replaced obj /usr/share/man/man1/vcdxgen.1.xz
+--- replaced obj /usr/share/man/man1/vcdxbuild.1.xz
+--- replaced obj /usr/share/man/man1/vcdimager.1.xz
+--- replaced obj /usr/share/man/man1/vcd-info.1.xz
+--- replaced obj /usr/share/man/man1/cdxa2mpeg.1.xz
+--- replaced dir /usr/share/man/man1
+--- replaced dir /usr/share/man
+--- replaced obj /usr/share/info/vcdxrip.info.xz
+--- replaced obj /usr/share/info/vcdimager.info.xz
+--- replaced obj /usr/share/info/vcd-info.info.xz
+--- replaced dir /usr/share/info
+--- replaced dir /usr/share
+--- replaced obj /usr/lib64/pkgconfig/libvcdinfo.pc
+--- replaced dir /usr/lib64/pkgconfig
+--- replaced obj /usr/lib64/libvcdinfo.so.0.2.0
+--- replaced sym /usr/lib64/libvcdinfo.so.0
+--- replaced sym /usr/lib64/libvcdinfo.so
+--- replaced dir /usr/lib64
+--- replaced obj /usr/include/libvcd/version.h
+--- replaced obj /usr/include/libvcd/types.h
+--- replaced obj /usr/include/libvcd/sector.h
+--- replaced obj /usr/include/libvcd/logging.h
+--- replaced obj /usr/include/libvcd/info.h
+--- replaced obj /usr/include/libvcd/inf.h
+--- replaced obj /usr/include/libvcd/files_private.h
+--- replaced obj /usr/include/libvcd/files.h
+--- replaced dir /usr/include/libvcd
+--- replaced dir /usr/include
+--- replaced obj /usr/bin/vcdxrip
+--- replaced obj /usr/bin/vcdxminfo
+--- replaced obj /usr/bin/vcdxgen
+--- replaced obj /usr/bin/vcdxbuild
+--- replaced obj /usr/bin/vcdimager
+--- replaced obj /usr/bin/vcd-info
+--- replaced obj /usr/bin/cdxa2mpeg
+--- replaced dir /usr/bin
+--- replaced dir /usr
+>>> Regenerating /etc/ld.so.cache...
+>>> Original instance of package unmerged safely.
+>>> media-video/vcdimager-0.7.23-r1 merged.
+>>> Regenerating /etc/ld.so.cache...
