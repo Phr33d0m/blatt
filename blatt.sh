@@ -15,7 +15,7 @@ CMD_GREP_ARGS="-i --color=always"
 
 CMDS=""
 ISSUES=""
-
+DOSTUFF="all"
 
 
 ### COLOURS
@@ -37,28 +37,52 @@ BOLD=$(tput bold)
 #REVERSE=$(tput smso)
 #UNDERLINE=$(tput smul)
 
+#Takes: Filename / Sets: bare PN
+function getpn(){
+	PN=$(basename $1 | sed 's%\(.*\):\(.*\)-[0-9]\..*%\1/\2%')
+}
 
 ### HARDCODED CALLS
-
+# Set up our grep command
 for i in $(ls --color=never /usr/bin/x86_64-pc-linux-gnu-* | sed 's:/usr/bin/x86_64-pc-linux-gnu-::g'); do
 	CMDS+="^"$i" |";
 done
+CMDS=${CMDS%?} #Slice off last character
 
-CMDS=$(sed 's:|$::' <<< $CMDS)
-
-if [[ $($CMD_GREP $CMD_GREP_ARGS "$CMDS" $1) ]]; then
-	ISSUES+=" hardcalls"
-fi
+HARDCALLS=0 #Boolean
+function hardcalls(){ # 1: filename 2: PN
+	TREACLE=$($CMD_GREP $CMD_GREP_ARGS "$CMDS" $1)
+	if [[ $TREACLE ]]; then
+		I_HARDCALLPN=("${I_HARDCALLPN[@]}" "$2")
+		I_HARDCALL_LINES=("${I_HARDCALL_LINES[@]}" "$TREACLE")
+		let HARDCALLS++
+	else
+		echo -e $GREEN$2" is clean"$NORM
+	fi
+}
 
 
 
 ### MAIN STORY
+### Call requested tests on each desired file
+for I in $*; do
+	getpn $I
+	case $DOSTUFF in
+		'hardcalls'|'all')
+			hardcalls $I $PN
+	esac
+done
+
+ISSUES=$HARDCALLS # Can just keep attaching things as tests get added. Any non-negative value makes the if true.
 
 if [[ $ISSUES ]]; then
 	echo -e $RED">>> ISSUES FOUND!"
-	if echo $ISSUES | grep -q 'hardcalls'; then
+	if [[ $HARDCALLS ]]; then
 		echo -e $BOLD$YELLOW"> Hardcoded calls:"$NORM
-		$CMD_GREP $CMD_GREP_ARGS "'$CMDS'" $1;
+		for ((I=0; I<=$HARDCALLS; I++ )); do
+			echo $BOLD$YELLOW"${I_HARDCALLPN[$I]}"$NORM
+			echo "${I_HARDCALL_LINES[$I]}"
+		done
 	fi
 else
 	echo -e "$BOLD$GREEN>>> NO ISSUES FOUND"$NORM
