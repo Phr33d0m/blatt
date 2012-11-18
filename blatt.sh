@@ -19,7 +19,7 @@ CMD_GREP_ARGS="--color=always"
 CMDS=""
 CMDS_ALT=""
 ISSUES=""
-DOSTUFF="flagrespect"
+DOSTUFF="all"
 PKG_NAME=""
 
 ### COLOURS
@@ -42,7 +42,7 @@ function atomise(){
 #TODO: Move this pile of stuff into a function so it only runs if necessary.
 # Set up our grep command
 for i in $(ls --color=never /usr/bin/x86_64-pc-linux-gnu-* | sed 's:/usr/bin/x86_64-pc-linux-gnu-::g'); do
-	CMDS+="^"$i" |";
+	CMDS+="^"$i" .|";
 	CMDS_ALT+="libtool.* "$i"|";
 done
 CMDS=${CMDS%?} #Slice off last character
@@ -51,12 +51,15 @@ CMDS_ALT=${CMDS_ALT%?} #Slice off last character
 CMDS=$(echo $CMDS | sed 's:\+:\\+:g;s:\-:\\-:g') 
 CMDS_ALT=$(echo $CMDS_ALT | sed 's:\+:\\+:g;s:\-:\\-:g')
 
-function hardcalls(){ # 1: filename 2: PN
-	HARDCALLS=0 #Boolean
+HARDCALLS=0
+function hardcalls(){ # 1: filename 2: PACKAGE
+	if [[ $PN == "gvim" ]];then 
+		echo -e $RED"gvim has issues and will screw with your terminal"
+		echo -e $BOLD"TODO: continue ignoring gvim's logs. Do it manually."$NORM
+		return
+	fi
 	TREACLE=$($CMD_GREP $CMD_GREP_ARGS "$CMDS" $1)
 	if [[ $TREACLE ]]; then
-		I_HARDCALLPN=("${I_HARDCALLPN[@]}" "$2")
-		I_HARDCALL_LINES=("${I_HARDCALL_LINES[@]}" "$TREACLE")
 		let HARDCALLS++
 	else
 		echo -e $GREEN$2" is clean"$NORM
@@ -65,8 +68,8 @@ function hardcalls(){ # 1: filename 2: PN
 
 ### CHECK: STATIC LIBS
 #
-function lafiles(){
 	STATIC_REFUGEES=0
+function lafiles(){
 	if [[ $(head -4 $1|grep "USE.*static-libs") ]]; then
 		return # The USEs in the log are build-time
 	else
@@ -80,13 +83,16 @@ function lafiles(){
 ### CHECK: CFLAGS/CXXFLAGS respect
 #
 function flagrespect(){
+	RODNEY_DANGERFFLAG=0 #No respect, I tell ya!
 	#TODO: Patch log output to have this (or ask Zac)
 	CFLAGS=$(portageq envvar CFLAGS)
 	CXXFLAGS=$(portageq envvar CXXFLAGS)
-	if [[ $CFLAGS -eq $CXXFLAGS ]];
+	if [[ $CFLAGS -eq $CXXFLAGS ]]; then
 		echo -e $BOLD$RED"CFLAGS and CXXFLAGS must not match!"$NORM
 		exit $E_FLAGSARETOUCHING
 	fi
+	#TODO: Make this less spammy and wasteful. Read once check multiple
+	#FLAGSPAM=$($CMD_GREP $1  
 }
 
 ### MAIN STORY
@@ -105,8 +111,8 @@ for I in $*; do
 			;;&
 		'flagrespect'|'all')
 			#flagrespect $I $PACKAGE
-			echo Work in progress...
-			exit E_WIP
+			#echo Work in progress...
+			#exit $E_WIP
 			;;
 		?) # should be unreachable right now.
 			exit 0
@@ -120,13 +126,13 @@ for I in $*; do
 		echo -e $BOLD$RED">>> $PACKAGE: ISSUES FOUND"
 		if [[ $HARDCALLS -gt 0 ]]; then
 			echo -e $BOLD$YELLOW"> Hardcoded calls:"$NORM
-			for ((I=0; I<=$HARDCALLS; I++ )); do
-				echo "${I_HARDCALL_LINES[$I]}"
-			done
+			echo -e "$TREACLE"$NORM
+			HARDCALLS=0
 		fi
 		if [[ $STATIC_REFUGEES -gt 0 ]]; then
 			echo -e $BOLD$YELLOW"> Static Archive Refugees:"$NORM
 			echo -e "$LAFF"
+			$STATIC_REFUGEES=0
 		fi
 	else
 		echo -e "$BOLD$GREEN>>> $PACKAGE: NO ISSUES FOUND"$NORM
