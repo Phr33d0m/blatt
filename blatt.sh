@@ -4,6 +4,8 @@
 
 ARGCOUNT=1
 E_NOFILE=1
+E_WIP=2
+E_FLAGSARETOUCHING=4
 E_WRONGARGS=33
 if [[ $# -lt $ARGCOUNT ]]; then
 	echo "Simple tool to find build system issues."
@@ -17,7 +19,7 @@ CMD_GREP_ARGS="--color=always"
 CMDS=""
 CMDS_ALT=""
 ISSUES=""
-DOSTUFF="all"
+DOSTUFF="flagrespect"
 PKG_NAME=""
 
 ### COLOURS
@@ -78,7 +80,13 @@ function lafiles(){
 ### CHECK: CFLAGS/CXXFLAGS respect
 #
 function flagrespect(){
-	echo "flagrespect() Work in progress"
+	#TODO: Patch log output to have this (or ask Zac)
+	CFLAGS=$(portageq envvar CFLAGS)
+	CXXFLAGS=$(portageq envvar CXXFLAGS)
+	if [[ $CFLAGS -eq $CXXFLAGS ]];
+		echo -e $BOLD$RED"CFLAGS and CXXFLAGS must not match!"$NORM
+		exit $E_FLAGSARETOUCHING
+	fi
 }
 
 ### MAIN STORY
@@ -97,6 +105,8 @@ for I in $*; do
 			;;&
 		'flagrespect'|'all')
 			#flagrespect $I $PACKAGE
+			echo Work in progress...
+			exit E_WIP
 			;;
 		?) # should be unreachable right now.
 			exit 0
