@@ -29,7 +29,7 @@ BOLD=$(tput bold)
 
 #Takes: Filename / Sets: CAT,PN,PV,PACAKGE
 function atomise(){
-	ATOM=($(qatom `basename $1|sed 's/:/\//;s/:.*//'`))
+	ATOM=($(qatom `head -1 $1|sed 's/.*:[[:space:]]*//'`))
 	CAT=${ATOM[0]}
 	PN=${ATOM[1]}
 	PV=${ATOM[2]}
@@ -86,6 +86,7 @@ function flagrespect(){
 #TODO: convert to getopts and optional running
 for I in $*; do
 	if [[ -d $I ]]; then  continue; fi #Skip directories
+	if [[ $( head -1 $I|grep '^No package.*') ]]; then  continue; fi #Skip uninstalls
 	atomise $I
 	case $DOSTUFF in #This is awful right now. More for structure
 		'hardcalls'|'all')
