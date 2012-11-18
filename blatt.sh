@@ -29,7 +29,7 @@ done
 
 CMDS=$(sed 's:|$::' <<< $CMDS)
 
-if [[ $($CMD_GREP $CMD_GREP_ARGS '"$CMDS"' $1) ]]; then
+if [[ $($CMD_GREP $CMD_GREP_ARGS "$CMDS" $1) ]]; then
     ISSUES+=" hardcalls"
 fi
 
