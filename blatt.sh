@@ -6,7 +6,7 @@ ARGCOUNT=1
 E_WRONGARGS=33
 if [[ $# -lt $ARGCOUNT ]]; then
 	echo "Simple tool to find build system issues."
-	echo "Usage: blatt.sh [package log file]"
+	echo "Usage: $(basename $0) [package log file]"
 	exit $E_WRONGARGS
 fi
 
