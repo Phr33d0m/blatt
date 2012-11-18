@@ -2,7 +2,7 @@
 # blatt - (Gentoo) build log arch testing tool
 # by Denis M. (Phr33d0m)
 
-CMD_GREP=`command -v egrep`
+CMD_GREP=$(command -v egrep)
 CMD_GREP_ARGS="-i --color=always"
 
 CMDS=""
@@ -23,13 +23,13 @@ BLDYLW='\e[1;33m' 		# Bold Yellow
 
 ### HARDCODED CALLS
 
-for i in $(ls --color=none /usr/bin/x86_64-pc-linux-gnu-* | sed 's:/usr/bin/x86_64-pc-linux-gnu-::g'); do
+for i in $(ls --color=never /usr/bin/x86_64-pc-linux-gnu-* | sed 's:/usr/bin/x86_64-pc-linux-gnu-::g'); do
     CMDS+="^"$i" |";
 done
 
-CMDS=`sed 's:|$::' <<< $CMDS`
+CMDS=$(sed 's:|$::' <<< $CMDS)
 
-if [[ -z `$CMD_GREP $CMD_GREP_ARGS '"$CMDS"' $1` ]]; then
+if [[ -z $($CMD_GREP $CMD_GREP_ARGS '"$CMDS"' $1) ]]; then
     ISSUES+=" hardcalls"
 fi
 
