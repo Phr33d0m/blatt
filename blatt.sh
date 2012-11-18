@@ -6,36 +6,25 @@ ARGCOUNT=1
 E_WRONGARGS=33
 if [[ $# -lt $ARGCOUNT ]]; then
 	echo "Simple tool to find build system issues."
-	echo "Usage: $(basename $0) [package log file]"
+	echo "Usage: $(basename $0) /path/to/logs-dir/<cat>:<pkg>-<ver>-....log"
 	exit $E_WRONGARGS
 fi
 
 CMD_GREP=$(command -v egrep)
-CMD_GREP_ARGS="-i --color=always"
+CMD_GREP_ARGS="--color=always"
 
 CMDS=""
+CMDS_ALT=""
 ISSUES=""
 DOSTUFF="all"
-
+PKG_NAME=""
 
 ### COLOURS
-
 NORM=$(tput sgr0) #NORMal
 RED=$(tput setaf 1)	
 GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
 BOLD=$(tput bold)
-
-#LIME_YELLOW=$(tput setaf 190)
-#POWDER_BLUE=$(tput setaf 153)
-#BLUE=$(tput setaf 4)
-#MAGENTA=$(tput setaf 5)
-#CYAN=$(tput setaf 6)
-#WHITE=$(tput setaf 7)
-#BRIGHT=$(tput bold)
-#BLINK=$(tput blink)
-#REVERSE=$(tput smso)
-#UNDERLINE=$(tput smul)
 
 #Takes: Filename / Sets: bare PN
 function getpn(){
@@ -46,8 +35,19 @@ function getpn(){
 # Set up our grep command
 for i in $(ls --color=never /usr/bin/x86_64-pc-linux-gnu-* | sed 's:/usr/bin/x86_64-pc-linux-gnu-::g'); do
 	CMDS+="^"$i" |";
+	CMDS_ALT+="libtool.* "$i"|";
 done
 CMDS=${CMDS%?} #Slice off last character
+CMDS_ALT=${CMDS_ALT%?} #Slice off last character
+
+CMDS=$(echo $CMDS | sed 's:\+:\\+:g;s:\-:\\-:g')
+CMDS_ALT=$(echo $CMDS_ALT | sed 's:\+:\\+:g;s:\-:\\-:g')
+#    if [ -f $1 ]; then
+#	PKG_NAME=`echo $1 | xargs -n 1 basename | sed 's/:/\//;s/:.*//;s/\(.*\)-[0-9]\..*/\1/'`
+#    else
+#	echo "ERROR: File does not exist."
+#	exit 1
+#   fi
 
 HARDCALLS=0 #Boolean
 function hardcalls(){ # 1: filename 2: PN
@@ -86,4 +86,26 @@ if [[ $ISSUES ]]; then
 	fi
 else
 	echo -e "$BOLD$GREEN>>> NO ISSUES FOUND"$NORM
+#
+#
+#if [[ `$CMD_GREP $CMD_GREP_ARGS "'$CMDS'" $1 | wc -l` -gt 0 ]]; then
+#    ISSUES="${ISSUES} hardcalls-issue"
+#fi
+#
+#if [[ `$CMD_GREP $CMD_GREP_ARGS "'$CMDS_ALT'" $1 | wc -l` -gt 0 ]]; then
+#    ISSUES="${ISSUES} hardcalls-issue"
+#fi
+#
+#
+#### MAIN STORY
+##
+#if [[ `echo $ISSUES | grep -c 'issue'` -gt 0 ]]; then
+#    echo -e $BLDRED">>> ISSUES FOUND!"
+#    if echo $ISSUES | grep -q 'hardcalls-issue'; then
+#	echo -e $BLDYLW"> Hardcoded calls:"
+#	$CMD_GREP $CMD_GREP_ARGS "'$CMDS'" $1
+#	$CMD_GREP $CMD_GREP_ARGS "'$CMDS_ALT'" $1
+#    fi
+#else
+#    echo -e $BLDGRN">>> NO ISSUES FOUND"
 fi
