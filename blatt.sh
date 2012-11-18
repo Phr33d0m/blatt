@@ -20,13 +20,22 @@ ISSUES=""
 
 ### COLOURS
 
-TXTRED='\e[0;31m' 		# Red
-TXTGRN='\e[0;32m' 		# Green
-TXTYLW='\e[0;33m' 		# Yellow
-BLDRED='\e[1;31m' 		# Bold Red
-BLDGRN='\e[1;32m' 		# Bold Green
-BLDYLW='\e[1;33m' 		# Bold Yellow
+NORM=$(tput sgr0) #NORMal
+RED=$(tput setaf 1)	
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BOLD=$(tput bold)
 
+#LIME_YELLOW=$(tput setaf 190)
+#POWDER_BLUE=$(tput setaf 153)
+#BLUE=$(tput setaf 4)
+#MAGENTA=$(tput setaf 5)
+#CYAN=$(tput setaf 6)
+#WHITE=$(tput setaf 7)
+#BRIGHT=$(tput bold)
+#BLINK=$(tput blink)
+#REVERSE=$(tput smso)
+#UNDERLINE=$(tput smul)
 
 
 ### HARDCODED CALLS
@@ -46,11 +55,11 @@ fi
 ### MAIN STORY
 
 if [[ $ISSUES ]]; then
-	echo -e "$BLDRED>>> ISSUES FOUND!"
+	echo -e $RED">>> ISSUES FOUND!"
 	if echo $ISSUES | grep -q 'hardcalls'; then
-		echo -e "$BLDYLW> Hardcoded calls:"
+		echo -e $BOLD$YELLOW"> Hardcoded calls:"$NORM
 		$CMD_GREP $CMD_GREP_ARGS "'$CMDS'" $1;
 	fi
 else
-	echo -e "$BLDGRN>>> NO ISSUES FOUND"
+	echo -e "$BOLD$GREEN>>> NO ISSUES FOUND"$NORM
 fi
