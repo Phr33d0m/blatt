@@ -1,0 +1,615 @@
+[32;01m * [39;49;00mPackage:    app-portage/eix-0.27.2
+[32;01m * [39;49;00mRepository: gentoo
+[32;01m * [39;49;00mMaintainer: vaeth@mathematik.uni-wuerzburg.de axs@gentoo.org
+[32;01m * [39;49;00mUSE:        amd64 dep elibc_glibc kernel_linux nls sqlite userland_GNU
+[32;01m * [39;49;00mFEATURES:   preserve-libs sandbox splitdebug
+>>> Unpacking source...
+>>> Unpacking eix-0.27.2.tar.xz to /var/tmp/portage/app-portage/eix-0.27.2/work
+>>> Source unpacked in /var/tmp/portage/app-portage/eix-0.27.2/work
+>>> Preparing source in /var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2 ...
+>>> Source prepared.
+>>> Configuring source in /var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2 ...
+ * econf: updating eix-0.27.2/config/config.guess with /usr/share/gnuconfig/config.guess
+ * econf: updating eix-0.27.2/config/config.sub with /usr/share/gnuconfig/config.sub
+./configure --prefix=/usr --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu --mandir=/usr/share/man --infodir=/usr/share/info --datadir=/usr/share --sysconfdir=/etc --localstatedir=/var/lib --libdir=/usr/lib64 --disable-silent-rules --with-sqlite --without-extra-doc --without-zsh-completion --enable-nls --disable-separate-tools --disable-security --disable-optimization --disable-strong-optimization --disable-debugging --without-always-accept-keywords --with-dep-default --without-nongnu-cxx --with-ebuild-sh-default=/usr/lib64/portage/bin/ebuild.sh --with-portage-rootpath=/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.5.4:/opt/blackdown-jdk-1.4.2.03/bin:/opt/blackdown-jdk-1.4.2.03/jre/bin:/usr/tde/3.5/sbin:/usr/tde/3.5/bin:/usr/kde/3.5/sbin:/usr/kde/3.5/bin:/usr/qt/3/bin --with-eprefix-default= --docdir=/usr/share/doc/eix-0.27.2 --htmldir=/usr/share/doc/eix-0.27.2/html
+configure: loading site script /usr/share/config.site
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to assume GNU type compiler... yes (on request)
+checking for x86_64-pc-linux-gnu-g++... x86_64-pc-linux-gnu-g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether x86_64-pc-linux-gnu-g++ accepts -g... yes
+checking gcc version... 4.5.4
+checking whether debugging asserts/flags should be used... no (on request)
+checking whether most current C++ dialect should be used... yes (default)
+checking whether strong optimization options should be used... no (on request)
+checking whether optimization options should be used... no (on request)
+checking whether strong warning options should be used... no (default)
+checking whether warning options should be used... no (default)
+checking whether security options should be used... no (on request)
+checking whether options should not be tested individually... no (default)
+checking how to run the C++ preprocessor... x86_64-pc-linux-gnu-g++ -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether CXXFLAGS=-Werror is known... yes
+checking whether LDFLAGS=-Werror is known... yes
+checking whether LDFLAGS=-Wl,--fatal-warnings is known... yes
+checking whether CXXFLAGS=-std=gnu++11 is known... no
+checking whether CXXFLAGS=-std=c++11 is known... no
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... /bin/sed
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/gmsgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for x86_64-pc-linux-gnu-gcc... x86_64-pc-linux-gnu-gcc
+checking whether we are using the GNU C compiler... yes
+checking whether x86_64-pc-linux-gnu-gcc accepts -g... yes
+checking for x86_64-pc-linux-gnu-gcc option to accept ISO C89... none needed
+checking for ld used by GCC... /usr/x86_64-pc-linux-gnu/bin/ld
+checking if the linker (/usr/x86_64-pc-linux-gnu/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for null-device... /dev/null
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for _LARGEFILE_SOURCE value needed for large files... no
+checking for regcomp... yes
+checking for strchr... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strrchr... yes
+checking for fnmatch... yes
+checking for memset... yes
+checking for strtoul... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking grp.h usability... yes
+checking grp.h presence... yes
+checking for grp.h... yes
+checking interix/security.h usability... no
+checking interix/security.h presence... no
+checking for interix/security.h... no
+checking for strndup... yes
+checking for sigaction... yes
+checking for canonicalize_file_name... yes
+checking for realpath... yes
+checking for vfork... yes
+checking for setenv... yes
+checking for setuid... yes
+checking for setgid... yes
+checking for seteuid... yes
+checking for setegid... yes
+checking for setuser... no
+checking for setgroups... yes
+checking for initgroups... yes
+checking whether setuid prototype works... yes
+checking whether seteuid prototype works... yes
+checking whether setgid prototype works... yes
+checking whether setegid prototype works... yes
+checking climits usability... yes
+checking climits presence... yes
+checking for climits... yes
+checking tr1/cstdint usability... yes
+checking tr1/cstdint presence... yes
+checking for tr1/cstdint... yes
+checking whether paranoic asserts are used... yes
+checking whether __builtin_expect can be used... yes
+checking whether CXXFLAGS=-Wattributes is known... yes
+checking whether pragma GCC diagnostic can be used everywhere... no
+checking whether __attribute__ ((unused)) can be used... yes
+checking whether __attribute__ ((noreturn)) can be used... yes
+checking whether __attribute__ ((signal)) can be used... no
+checking whether __attribute__ ((const)) can be used... yes
+checking whether __attribute__ ((pure)) can be used... yes
+checking whether __attribute__ ((nonnull)) can be used... yes
+checking whether __attribute__ ((nonnull (x, y))) can be used... yes
+checking whether nullptr can be used... no
+checking whether sqlite should be used... yes (on request)
+checking for x86_64-pc-linux-gnu-pkg-config... no
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for SQLITE... yes
+checking PORTDIR_CACHE_METHOD default... metadata-md5-or-flat (default)
+checking EPREFIX default... (empty)
+checking EIX_PREFIX default... (empty)
+checking ROOT default... (empty)
+checking EXEC_EBUILD_SH default... /usr/lib64/portage/bin/ebuild.sh (on request)
+checking PORTAGE_ROOTPATH default... /opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.5.4:/opt/blackdown-jdk-1.4.2.03/bin:/opt/blackdown-jdk-1.4.2.03/jre/bin:/usr/tde/3.5/sbin:/usr/tde/3.5/bin:/usr/kde/3.5/sbin:/usr/kde/3.5/bin:/usr/qt/3/bin
+checking PORTAGE_BIN_PATH default... (empty)
+checking default DEFAULT_ARCH... amd64
+checking default remote path... http://dev.gentooexperimental.org/eix_cache/eix-caches.tbz2
+checking ALWAYS_ACCEPT_KEYWORDS default... false
+checking DEP default... true
+checking zsh completion... (empty)
+checking whether byte ordering is bigendian... no
+checking for uint8_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating manpage/Makefile
+config.status: creating src/Makefile
+config.status: creating doc/Makefile
+config.status: creating po/Makefile.in
+config.status: creating zsh/Makefile
+config.status: creating config.h
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+
+
+eix-0.27.2 configured successfully.
+
+
+CXX: x86_64-pc-linux-gnu-g++
+
+CXXFLAGS: -march=native -O2 -pipe -g
+LDFLAGS: -Wl,--as-needed
+
+>>> Source configured.
+>>> Compiling source in /var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2 ...
+make -j4 
+make  all-recursive
+make[1]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2'
+Making all in po
+make[2]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/po'
+make[2]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/po'
+Making all in src
+make[2]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/src'
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eix.o eix.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o various/cli.o various/cli.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/ansicolor_print.o eixTk/ansicolor_print.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eix-diff.o eix-diff.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eix-update.o eix-update.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/percentage.o eixTk/percentage.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/statusline.o eixTk/statusline.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o cache/base.o cache/base.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/md5.o eixTk/md5.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o masked-packages.o masked-packages.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o versionsort.o versionsort.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eix-drop-permissions.o eix-drop-permissions.cc
+"./cache/generate_cachemap.sh" > "cache/cache_map.cc"
+/bin/sed \
+	-e "s,\@PACKAGE_STRING\@,eix 0.27.2,g" \
+	-e "s,\@EIX_CACHEFILE\@,/var/cache/eix/portage.eix,g" \
+	-e "s,\@EIX_PREVIOUS\@,/var/cache/eix/previous.eix,g" \
+	-e "s,\@EIX_REMOTEARCHIVE\@,/var/cache/eix/remote.tar.bz2,g" \
+	-e "s,\@PACKAGE_BUGREPORT\@,http://developer.berlios.de/projects/eix/,g" \
+	-e "s,\@PACKAGE_URL\@,http://eix.berlios.de/,g" \
+	-e "s,\@LEVENSHTEIN_DISTANCE\@,,g" \
+	-e "s,\@PORTDIR_CACHE_METHOD\@,metadata-md5-or-flat,g" \
+	-e "s,\@BINDIR\@,/usr/bin,g" \
+	-e "s,\@SYSCONFDIR\@,/etc,g" \
+	-e "s,\@DEFAULT_REMOTE_PATH\@,http://dev.gentooexperimental.org/eix_cache/eix-caches.tbz2,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	-e "s,\./eix-functions\.sh\.in,'/usr/bin/eix-functions.sh',g" \
+	-e "s,\./eix-drop-permissions,'/usr/bin/eix-drop-permissions',g" \
+	-e "s,\./eix-remote.in,'/usr/bin/eix-remote',g" \
+	-e "s,\@TEXTDOMAIN\@,eix,g" \
+	-e "s,\@TEXTDOMAINDIR\@,/usr/share/locale,g" \
+	-e "s,\@USE_NLS\@,yes,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	"eix-functions.sh.in" > "eix-functions.sh"
+/bin/sed \
+	-e "s,\@PACKAGE_STRING\@,eix 0.27.2,g" \
+	-e "s,\@EIX_CACHEFILE\@,/var/cache/eix/portage.eix,g" \
+	-e "s,\@EIX_PREVIOUS\@,/var/cache/eix/previous.eix,g" \
+	-e "s,\@EIX_REMOTEARCHIVE\@,/var/cache/eix/remote.tar.bz2,g" \
+	-e "s,\@PACKAGE_BUGREPORT\@,http://developer.berlios.de/projects/eix/,g" \
+	-e "s,\@PACKAGE_URL\@,http://eix.berlios.de/,g" \
+	-e "s,\@LEVENSHTEIN_DISTANCE\@,,g" \
+	-e "s,\@PORTDIR_CACHE_METHOD\@,metadata-md5-or-flat,g" \
+	-e "s,\@BINDIR\@,/usr/bin,g" \
+	-e "s,\@SYSCONFDIR\@,/etc,g" \
+	-e "s,\@DEFAULT_REMOTE_PATH\@,http://dev.gentooexperimental.org/eix_cache/eix-caches.tbz2,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	-e "s,\./eix-functions\.sh\.in,'/usr/bin/eix-functions.sh',g" \
+	-e "s,\./eix-drop-permissions,'/usr/bin/eix-drop-permissions',g" \
+	-e "s,\./eix-remote.in,'/usr/bin/eix-remote',g" \
+	-e "s,\@TEXTDOMAIN\@,eix,g" \
+	-e "s,\@TEXTDOMAINDIR\@,/usr/share/locale,g" \
+	-e "s,\@USE_NLS\@,yes,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	"eix-installed.in" > "eix-installed"
+/bin/sed \
+	-e "s,\@PACKAGE_STRING\@,eix 0.27.2,g" \
+	-e "s,\@EIX_CACHEFILE\@,/var/cache/eix/portage.eix,g" \
+	-e "s,\@EIX_PREVIOUS\@,/var/cache/eix/previous.eix,g" \
+	-e "s,\@EIX_REMOTEARCHIVE\@,/var/cache/eix/remote.tar.bz2,g" \
+	-e "s,\@PACKAGE_BUGREPORT\@,http://developer.berlios.de/projects/eix/,g" \
+	-e "s,\@PACKAGE_URL\@,http://eix.berlios.de/,g" \
+	-e "s,\@LEVENSHTEIN_DISTANCE\@,,g" \
+	-e "s,\@PORTDIR_CACHE_METHOD\@,metadata-md5-or-flat,g" \
+	-e "s,\@BINDIR\@,/usr/bin,g" \
+	-e "s,\@SYSCONFDIR\@,/etc,g" \
+	-e "s,\@DEFAULT_REMOTE_PATH\@,http://dev.gentooexperimental.org/eix_cache/eix-caches.tbz2,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	-e "s,\./eix-functions\.sh\.in,'/usr/bin/eix-functions.sh',g" \
+	-e "s,\./eix-drop-permissions,'/usr/bin/eix-drop-permissions',g" \
+	-e "s,\./eix-remote.in,'/usr/bin/eix-remote',g" \
+	-e "s,\@TEXTDOMAIN\@,eix,g" \
+	-e "s,\@TEXTDOMAINDIR\@,/usr/share/locale,g" \
+	-e "s,\@USE_NLS\@,yes,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	"eix-installed-after.in" > "eix-installed-after"
+/bin/sed \
+	-e "s,\@PACKAGE_STRING\@,eix 0.27.2,g" \
+	-e "s,\@EIX_CACHEFILE\@,/var/cache/eix/portage.eix,g" \
+	-e "s,\@EIX_PREVIOUS\@,/var/cache/eix/previous.eix,g" \
+	-e "s,\@EIX_REMOTEARCHIVE\@,/var/cache/eix/remote.tar.bz2,g" \
+	-e "s,\@PACKAGE_BUGREPORT\@,http://developer.berlios.de/projects/eix/,g" \
+	-e "s,\@PACKAGE_URL\@,http://eix.berlios.de/,g" \
+	-e "s,\@LEVENSHTEIN_DISTANCE\@,,g" \
+	-e "s,\@PORTDIR_CACHE_METHOD\@,metadata-md5-or-flat,g" \
+	-e "s,\@BINDIR\@,/usr/bin,g" \
+	-e "s,\@SYSCONFDIR\@,/etc,g" \
+	-e "s,\@DEFAULT_REMOTE_PATH\@,http://dev.gentooexperimental.org/eix_cache/eix-caches.tbz2,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	-e "s,\./eix-functions\.sh\.in,'/usr/bin/eix-functions.sh',g" \
+	-e "s,\./eix-drop-permissions,'/usr/bin/eix-drop-permissions',g" \
+	-e "s,\./eix-remote.in,'/usr/bin/eix-remote',g" \
+	-e "s,\@TEXTDOMAIN\@,eix,g" \
+	-e "s,\@TEXTDOMAINDIR\@,/usr/share/locale,g" \
+	-e "s,\@USE_NLS\@,yes,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	"eix-layman.in" > "eix-layman"
+/bin/sed \
+	-e "s,\@PACKAGE_STRING\@,eix 0.27.2,g" \
+	-e "s,\@EIX_CACHEFILE\@,/var/cache/eix/portage.eix,g" \
+	-e "s,\@EIX_PREVIOUS\@,/var/cache/eix/previous.eix,g" \
+	-e "s,\@EIX_REMOTEARCHIVE\@,/var/cache/eix/remote.tar.bz2,g" \
+	-e "s,\@PACKAGE_BUGREPORT\@,http://developer.berlios.de/projects/eix/,g" \
+	-e "s,\@PACKAGE_URL\@,http://eix.berlios.de/,g" \
+	-e "s,\@LEVENSHTEIN_DISTANCE\@,,g" \
+	-e "s,\@PORTDIR_CACHE_METHOD\@,metadata-md5-or-flat,g" \
+	-e "s,\@BINDIR\@,/usr/bin,g" \
+	-e "s,\@SYSCONFDIR\@,/etc,g" \
+	-e "s,\@DEFAULT_REMOTE_PATH\@,http://dev.gentooexperimental.org/eix_cache/eix-caches.tbz2,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	-e "s,\./eix-functions\.sh\.in,'/usr/bin/eix-functions.sh',g" \
+	-e "s,\./eix-drop-permissions,'/usr/bin/eix-drop-permissions',g" \
+	-e "s,\./eix-remote.in,'/usr/bin/eix-remote',g" \
+	-e "s,\@TEXTDOMAIN\@,eix,g" \
+	-e "s,\@TEXTDOMAINDIR\@,/usr/share/locale,g" \
+	-e "s,\@USE_NLS\@,yes,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	"eix-remote.in" > "eix-remote"
+/bin/sed \
+	-e "s,\@PACKAGE_STRING\@,eix 0.27.2,g" \
+	-e "s,\@EIX_CACHEFILE\@,/var/cache/eix/portage.eix,g" \
+	-e "s,\@EIX_PREVIOUS\@,/var/cache/eix/previous.eix,g" \
+	-e "s,\@EIX_REMOTEARCHIVE\@,/var/cache/eix/remote.tar.bz2,g" \
+	-e "s,\@PACKAGE_BUGREPORT\@,http://developer.berlios.de/projects/eix/,g" \
+	-e "s,\@PACKAGE_URL\@,http://eix.berlios.de/,g" \
+	-e "s,\@LEVENSHTEIN_DISTANCE\@,,g" \
+	-e "s,\@PORTDIR_CACHE_METHOD\@,metadata-md5-or-flat,g" \
+	-e "s,\@BINDIR\@,/usr/bin,g" \
+	-e "s,\@SYSCONFDIR\@,/etc,g" \
+	-e "s,\@DEFAULT_REMOTE_PATH\@,http://dev.gentooexperimental.org/eix_cache/eix-caches.tbz2,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	-e "s,\./eix-functions\.sh\.in,'/usr/bin/eix-functions.sh',g" \
+	-e "s,\./eix-drop-permissions,'/usr/bin/eix-drop-permissions',g" \
+	-e "s,\./eix-remote.in,'/usr/bin/eix-remote',g" \
+	-e "s,\@TEXTDOMAIN\@,eix,g" \
+	-e "s,\@TEXTDOMAINDIR\@,/usr/share/locale,g" \
+	-e "s,\@USE_NLS\@,yes,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	"eix-sync.in" > "eix-sync"
+/bin/sed \
+	-e "s,\@PACKAGE_STRING\@,eix 0.27.2,g" \
+	-e "s,\@EIX_CACHEFILE\@,/var/cache/eix/portage.eix,g" \
+	-e "s,\@EIX_PREVIOUS\@,/var/cache/eix/previous.eix,g" \
+	-e "s,\@EIX_REMOTEARCHIVE\@,/var/cache/eix/remote.tar.bz2,g" \
+	-e "s,\@PACKAGE_BUGREPORT\@,http://developer.berlios.de/projects/eix/,g" \
+	-e "s,\@PACKAGE_URL\@,http://eix.berlios.de/,g" \
+	-e "s,\@LEVENSHTEIN_DISTANCE\@,,g" \
+	-e "s,\@PORTDIR_CACHE_METHOD\@,metadata-md5-or-flat,g" \
+	-e "s,\@BINDIR\@,/usr/bin,g" \
+	-e "s,\@SYSCONFDIR\@,/etc,g" \
+	-e "s,\@DEFAULT_REMOTE_PATH\@,http://dev.gentooexperimental.org/eix_cache/eix-caches.tbz2,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	-e "s,\./eix-functions\.sh\.in,'/usr/bin/eix-functions.sh',g" \
+	-e "s,\./eix-drop-permissions,'/usr/bin/eix-drop-permissions',g" \
+	-e "s,\./eix-remote.in,'/usr/bin/eix-remote',g" \
+	-e "s,\@TEXTDOMAIN\@,eix,g" \
+	-e "s,\@TEXTDOMAINDIR\@,/usr/share/locale,g" \
+	-e "s,\@USE_NLS\@,yes,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	"eix-test-obsolete.in" > "eix-test-obsolete"
+/bin/sed \
+	-e "s,\@PACKAGE_STRING\@,eix 0.27.2,g" \
+	-e "s,\@EIX_CACHEFILE\@,/var/cache/eix/portage.eix,g" \
+	-e "s,\@EIX_PREVIOUS\@,/var/cache/eix/previous.eix,g" \
+	-e "s,\@EIX_REMOTEARCHIVE\@,/var/cache/eix/remote.tar.bz2,g" \
+	-e "s,\@PACKAGE_BUGREPORT\@,http://developer.berlios.de/projects/eix/,g" \
+	-e "s,\@PACKAGE_URL\@,http://eix.berlios.de/,g" \
+	-e "s,\@LEVENSHTEIN_DISTANCE\@,,g" \
+	-e "s,\@PORTDIR_CACHE_METHOD\@,metadata-md5-or-flat,g" \
+	-e "s,\@BINDIR\@,/usr/bin,g" \
+	-e "s,\@SYSCONFDIR\@,/etc,g" \
+	-e "s,\@DEFAULT_REMOTE_PATH\@,http://dev.gentooexperimental.org/eix_cache/eix-caches.tbz2,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	-e "s,\./eix-functions\.sh\.in,'/usr/bin/eix-functions.sh',g" \
+	-e "s,\./eix-drop-permissions,'/usr/bin/eix-drop-permissions',g" \
+	-e "s,\./eix-remote.in,'/usr/bin/eix-remote',g" \
+	-e "s,\@TEXTDOMAIN\@,eix,g" \
+	-e "s,\@TEXTDOMAINDIR\@,/usr/share/locale,g" \
+	-e "s,\@USE_NLS\@,yes,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	"eixrc/eixrc.in" > "eixrc/eixrc"
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o various/drop_permissions.o various/drop_permissions.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/compare.o eixTk/compare.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/formated.o eixTk/formated.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/stringutils.o eixTk/stringutils.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/ansicolor.o eixTk/ansicolor.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/argsreader.o eixTk/argsreader.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/exceptions.o eixTk/exceptions.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/regexp.o eixTk/regexp.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/sysutils.o eixTk/sysutils.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/utils.o eixTk/utils.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/filenames.o eixTk/filenames.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixTk/varsreader.o eixTk/varsreader.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o database/io.o database/io.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o database/header.o database/header.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o database/package_reader.o database/package_reader.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/conf/portagesettings.o portage/conf/portagesettings.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/conf/cascadingprofile.o portage/conf/cascadingprofile.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/mask.o portage/mask.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/mask_list.o portage/mask_list.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/basicversion.o portage/basicversion.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/depend.o portage/depend.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/extendedversion.o portage/extendedversion.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/extendedversion_bin.o portage/extendedversion_bin.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/package.o portage/package.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/package_best.o portage/package_best.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/vardbpkg.o portage/vardbpkg.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/packagetree.o portage/packagetree.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/keywords.o portage/keywords.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/overlay.o portage/overlay.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/set_stability.o portage/set_stability.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o portage/version.o portage/version.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixrc/eixrc.o eixrc/eixrc.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixrc/global1.o eixrc/global1.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixrc/global2.o eixrc/global2.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixrc/global3.o eixrc/global3.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixrc/global4.o eixrc/global4.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixrc/global5.o eixrc/global5.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o eixrc/eixrc_portage.o eixrc/eixrc_portage.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o output/formatstring.o output/formatstring.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o output/formatstring-print.o output/formatstring-print.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o output/print-xml.o output/print-xml.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o search/levenshtein.o search/levenshtein.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o search/algorithms.o search/algorithms.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o search/matchtree.o search/matchtree.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o search/packagetest.o search/packagetest.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o search/nowarn.o search/nowarn.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o cache/cachetable.o cache/cachetable.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o cache/common/assign_reader.o cache/common/assign_reader.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o cache/common/flat_reader.o cache/common/flat_reader.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o cache/common/ebuild_exec.o cache/common/ebuild_exec.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o cache/common/selectors.o cache/common/selectors.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o cache/eixcache/eixcache.o cache/eixcache/eixcache.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o cache/metadata/metadata.o cache/metadata/metadata.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o cache/parse/parse.o cache/parse/parse.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o cache/sqlite/sqlite.o cache/sqlite/sqlite.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o main/main_all_tools.o main/main_all_tools.cc
+x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I. -I..    -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g -c -o cache/cache_map.o cache/cache_map.cc
+x86_64-pc-linux-gnu-g++ -DSYSCONFDIR=\"/etc\" -DLOCALEDIR=\"/usr/share/locale\"  -march=native -O2 -pipe -g  -Wl,--as-needed -o eix various/drop_permissions.o eixTk/compare.o eixTk/formated.o eixTk/stringutils.o eixTk/ansicolor.o eixTk/argsreader.o eixTk/exceptions.o eixTk/regexp.o eixTk/sysutils.o eixTk/utils.o eixTk/filenames.o eixTk/varsreader.o database/io.o database/header.o database/package_reader.o portage/conf/portagesettings.o portage/conf/cascadingprofile.o portage/mask.o portage/mask_list.o portage/basicversion.o portage/depend.o portage/extendedversion.o portage/extendedversion_bin.o portage/package.o portage/package_best.o portage/vardbpkg.o portage/packagetree.o portage/keywords.o portage/overlay.o portage/set_stability.o portage/version.o eixrc/eixrc.o eixrc/global1.o eixrc/global2.o eixrc/global3.o eixrc/global4.o eixrc/global5.o eixrc/eixrc_portage.o output/formatstring.o output/formatstring-print.o eix.o various/cli.o output/print-xml.o search/levenshtein.o search/algorithms.o search/matchtree.o search/packagetest.o search/nowarn.o eixTk/ansicolor_print.o eix-diff.o eix-update.o eixTk/percentage.o eixTk/statusline.o cache/cachetable.o cache/common/assign_reader.o cache/common/flat_reader.o cache/common/ebuild_exec.o cache/common/selectors.o cache/base.o cache/eixcache/eixcache.o cache/metadata/metadata.o cache/parse/parse.o cache/sqlite/sqlite.o eixTk/md5.o masked-packages.o versionsort.o eix-drop-permissions.o main/main_all_tools.o            cache/cache_map.o    -lsqlite3    
+test ! -e eix-diff || rm eix-diff
+test ! -e eix-update || rm eix-update
+ln -s eix eix-diff
+ln -s eix eix-update
+test ! -e masked-packages || rm masked-packages
+test ! -e versionsort || rm versionsort
+ln -s eix masked-packages
+ln -s eix versionsort
+test ! -e eix-drop-permissions || rm eix-drop-permissions
+ln -s eix eix-drop-permissions
+make[2]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/src'
+Making all in manpage
+make[2]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/manpage'
+/bin/sed \
+	-e "s,\@PACKAGE_STRING\@,eix 0.27.2,g" \
+	-e "s,\@EIX_CACHEFILE\@,/var/cache/eix/portage.eix,g" \
+	-e "s,\@EIX_REMOTECACHEFILE\@,/var/cache/eix/remote.eix,g" \
+	-e "s,\@EIX_PREVIOUS\@,/var/cache/eix/previous.eix,g" \
+	-e "s,\@EIX_REMOTEARCHIVE\@,/var/cache/eix/remote.tar.bz2,g" \
+	-e "s,\@PACKAGE_BUGREPORT\@,http://developer.berlios.de/projects/eix/,g" \
+	-e "s,\@PACKAGE_URL\@,http://eix.berlios.de/,g" \
+	-e "s,\@LEVENSHTEIN_DISTANCE\@,,g" \
+	-e "s,\@PORTDIR_CACHE_METHOD\@,metadata-md5-or-flat,g" \
+	-e "s,\@BINDIR\@,/usr/bin,g" \
+	-e "s,\@SYSCONFDIR\@,/etc,g" \
+	-e "s,\@DEFAULT_REMOTE_PATH\@,http://dev.gentooexperimental.org/eix_cache/eix-caches.tbz2,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	-e 's/$Date:[^,]*, *\([^)]*\)[^\$]*\$/\1/' \
+	-e 's,\([BI]\)<\([^>]\+\)>,\\f\1\2\\fR,g' \
+	-e 's/Ä/\\(:A/g' \
+	-e 's/Ö/\\(:O/g' \
+	-e 's/Ü/\\(:U/g' \
+	-e 's/ä/\\(:a/g' \
+	-e 's/ö/\\(:o/g' \
+	-e 's/ü/\\(:u/g' \
+	-e 's/ß/\\(ss/g' \
+	"de-eix.1.in" >"de-eix.1"
+/bin/sed \
+	-e "s,\@PACKAGE_STRING\@,eix 0.27.2,g" \
+	-e "s,\@EIX_CACHEFILE\@,/var/cache/eix/portage.eix,g" \
+	-e "s,\@EIX_REMOTECACHEFILE\@,/var/cache/eix/remote.eix,g" \
+	-e "s,\@EIX_PREVIOUS\@,/var/cache/eix/previous.eix,g" \
+	-e "s,\@EIX_REMOTEARCHIVE\@,/var/cache/eix/remote.tar.bz2,g" \
+	-e "s,\@PACKAGE_BUGREPORT\@,http://developer.berlios.de/projects/eix/,g" \
+	-e "s,\@PACKAGE_URL\@,http://eix.berlios.de/,g" \
+	-e "s,\@LEVENSHTEIN_DISTANCE\@,,g" \
+	-e "s,\@PORTDIR_CACHE_METHOD\@,metadata-md5-or-flat,g" \
+	-e "s,\@BINDIR\@,/usr/bin,g" \
+	-e "s,\@SYSCONFDIR\@,/etc,g" \
+	-e "s,\@DEFAULT_REMOTE_PATH\@,http://dev.gentooexperimental.org/eix_cache/eix-caches.tbz2,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	-e 's/$Date:[^,]*, *\([^)]*\)[^\$]*\$/\1/' \
+	-e 's,\([BI]\)<\([^>]\+\)>,\\f\1\2\\fR,g' \
+	-e 's/Ä/\\(:A/g' \
+	-e 's/Ö/\\(:O/g' \
+	-e 's/Ü/\\(:U/g' \
+	-e 's/ä/\\(:a/g' \
+	-e 's/ö/\\(:o/g' \
+	-e 's/ü/\\(:u/g' \
+	-e 's/ß/\\(ss/g' \
+	"ru-eix.1.in" >"ru-eix.1"
+/bin/sed \
+	-e "s,\@PACKAGE_STRING\@,eix 0.27.2,g" \
+	-e "s,\@EIX_CACHEFILE\@,/var/cache/eix/portage.eix,g" \
+	-e "s,\@EIX_REMOTECACHEFILE\@,/var/cache/eix/remote.eix,g" \
+	-e "s,\@EIX_PREVIOUS\@,/var/cache/eix/previous.eix,g" \
+	-e "s,\@EIX_REMOTEARCHIVE\@,/var/cache/eix/remote.tar.bz2,g" \
+	-e "s,\@PACKAGE_BUGREPORT\@,http://developer.berlios.de/projects/eix/,g" \
+	-e "s,\@PACKAGE_URL\@,http://eix.berlios.de/,g" \
+	-e "s,\@LEVENSHTEIN_DISTANCE\@,,g" \
+	-e "s,\@PORTDIR_CACHE_METHOD\@,metadata-md5-or-flat,g" \
+	-e "s,\@BINDIR\@,/usr/bin,g" \
+	-e "s,\@SYSCONFDIR\@,/etc,g" \
+	-e "s,\@DEFAULT_REMOTE_PATH\@,http://dev.gentooexperimental.org/eix_cache/eix-caches.tbz2,g" \
+	-e "s,/dev/null,/dev/null,g" \
+	-e 's/$Date:[^,]*, *\([^)]*\)[^\$]*\$/\1/' \
+	-e 's,\([BI]\)<\([^>]\+\)>,\\f\1\2\\fR,g' \
+	-e 's/Ä/\\(:A/g' \
+	-e 's/Ö/\\(:O/g' \
+	-e 's/Ü/\\(:U/g' \
+	-e 's/ä/\\(:a/g' \
+	-e 's/ö/\\(:o/g' \
+	-e 's/ü/\\(:u/g' \
+	-e 's/ß/\\(ss/g' \
+	"en-eix.1.in" >"en-eix.1"
+make[2]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/manpage'
+Making all in zsh
+make[2]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/zsh'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/zsh'
+make[2]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2'
+make[1]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2'
+>>> Source compiled.
+>>> Test phase [not enabled]: app-portage/eix-0.27.2
+
+>>> Install eix-0.27.2 into /var/tmp/portage/app-portage/eix-0.27.2/image/ category app-portage
+make -j4 DESTDIR=/var/tmp/portage/app-portage/eix-0.27.2/image/ install 
+Making install in po
+make[1]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/po'
+/usr/bin/mkdir -p /var/tmp/portage/app-portage/eix-0.27.2/image//usr/share
+if test "eix" = "gettext-tools"; then \
+  /usr/bin/mkdir -p /var/tmp/portage/app-portage/eix-0.27.2/image//usr/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /usr/bin/install -c -m 644 ./$file \
+		    /var/tmp/portage/app-portage/eix-0.27.2/image//usr/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /var/tmp/portage/app-portage/eix-0.27.2/image//usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[1]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/po'
+Making install in src
+make[1]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/src'
+make[2]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/src'
+ /usr/bin/mkdir -p '/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin'
+ /usr/bin/mkdir -p '/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin'
+make[2]: Nothing to be done for `install-data-am'.
+  /usr/bin/install -c eix '/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin'
+ /usr/bin/mkdir -p '/var/tmp/portage/app-portage/eix-0.27.2/image//etc'
+ /usr/bin/install -c eix-functions.sh eix-installed eix-installed-after eix-layman eix-remote eix-sync eix-test-obsolete '/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin'
+ /usr/bin/install -c -m 644 eixrc/eixrc '/var/tmp/portage/app-portage/eix-0.27.2/image//etc'
+make  install-exec-hook
+make[3]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/src'
+false || \
+	test ! -e "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/masked-packages" || \
+	rm -- "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/masked-packages"
+false || \
+	ln -s "eix" "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/masked-packages"
+false || \
+	test ! -e "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/versionsort" || \
+	rm -- "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/versionsort"
+false || \
+	ln -s "eix" "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/versionsort"
+false || \
+	test ! -e "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/eix-drop-permissions" || \
+	rm -- "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/eix-drop-permissions"
+false || \
+	ln -s "eix" "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/eix-drop-permissions"
+false || \
+	test ! -e "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/eix-update" || \
+	rm -- "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/eix-update"
+false || \
+	ln -s "eix" "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/eix-update"
+false || \
+	test ! -e "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/eix-diff" || \
+	rm -- "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/eix-diff"
+false || \
+	ln -s "eix" "/var/tmp/portage/app-portage/eix-0.27.2/image//usr/bin/eix-diff"
+make[3]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/src'
+make[2]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/src'
+make[1]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/src'
+Making install in manpage
+make[1]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/manpage'
+make[2]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/manpage'
+make[2]: Nothing to be done for `install-exec-am'.
+ /usr/bin/install -c -m 644 en-eix.1 /var/tmp/portage/app-portage/eix-0.27.2/image//usr/share/man/man1/eix.1
+make[2]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/manpage'
+make[1]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/manpage'
+Making install in zsh
+make[1]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/zsh'
+make[2]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/zsh'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/zsh'
+make[1]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2/zsh'
+make[1]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2'
+make[2]: Entering directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2'
+make[2]: Nothing to be done for `install-exec-am'.
+ /usr/bin/mkdir -p '/var/tmp/portage/app-portage/eix-0.27.2/image//usr/share/doc/eix-0.27.2'
+ /usr/bin/install -c -m 644 AUTHORS ChangeLog '/var/tmp/portage/app-portage/eix-0.27.2/image//usr/share/doc/eix-0.27.2'
+make[2]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2'
+make[1]: Leaving directory `/var/tmp/portage/app-portage/eix-0.27.2/work/eix-0.27.2'
+>>> Completed installing eix-0.27.2 into /var/tmp/portage/app-portage/eix-0.27.2/image/
+
+strip: x86_64-pc-linux-gnu-strip --strip-unneeded -R .comment -R .GCC.command.line
+   usr/bin/eix
+ecompressdir: bzip2 -9 /usr/share/doc
+ecompressdir: bzip2 -9 /usr/share/man
+ [33;01m*[0m Found obsolete /var/cache/eix.previous, please remove it
