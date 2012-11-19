@@ -19,7 +19,10 @@ CMD_GREP_ARGS="--color=always"
 
 CMDS=""
 CMDS_ALT=""
-ISSUES=""
+ISSUES=0
+HARDCALLS=0
+STATIC_REFUGEES=0
+RODNEY_DANGERFFLAG=0 #No respect, I tell ya!
 DOSTUFF="all"
 PKG_NAME=""
 
@@ -43,7 +46,7 @@ function atomise(){
 #TODO: Move this pile of stuff into a function so it only runs if necessary.
 # Set up our grep command
 for i in $(ls --color=never /usr/bin/x86_64-pc-linux-gnu-* | sed 's:/usr/bin/x86_64-pc-linux-gnu-::g'); do
-	CMDS+="^"$i" .|";
+	CMDS+="^"$i"[[:space:]]|";
 	CMDS_ALT+="libtool.* "$i"|";
 done
 CMDS=${CMDS%?} #Slice off last character
@@ -52,7 +55,6 @@ CMDS_ALT=${CMDS_ALT%?} #Slice off last character
 CMDS=$(echo $CMDS | sed 's:\+:\\+:g;s:\-:\\-:g')
 CMDS_ALT=$(echo $CMDS_ALT | sed 's:\+:\\+:g;s:\-:\\-:g')
 
-HARDCALLS=0
 function hardcalls(){ # 1: filename 2: PACKAGE
 	if [[ $PN == "gvim" ]];then
 		echo -e $RED"gvim has issues and will screw with your terminal"
@@ -62,14 +64,11 @@ function hardcalls(){ # 1: filename 2: PACKAGE
 	TREACLE=$($CMD_GREP $CMD_GREP_ARGS "$CMDS" $1)
 	if [[ $TREACLE ]]; then
 		let HARDCALLS++
-	else
-		echo -e $GREEN$2" is clean"$NORM
 	fi
 }
 
 ### CHECK: STATIC LIBS
 #
-	STATIC_REFUGEES=0
 function lafiles(){
 	if [[ $(head -4 $1|grep "USE.*static-libs") ]]; then
 		return # The USEs in the log are build-time
@@ -84,16 +83,19 @@ function lafiles(){
 ### CHECK: CFLAGS/CXXFLAGS respect
 #
 function flagrespect(){
-	RODNEY_DANGERFFLAG=0 #No respect, I tell ya!
 	#TODO: Patch log output to have this (or ask Zac)
 	CFLAGS=$(portageq envvar CFLAGS)
 	CXXFLAGS=$(portageq envvar CXXFLAGS)
 	if [[ $CFLAGS -eq $CXXFLAGS ]]; then
 		echo -e $BOLD$RED"CFLAGS and CXXFLAGS must not match!"$NORM
 		exit $E_FLAGSARETOUCHING
+	else
+		#TODO: Make this less spammy and wasteful. Read once check multiple
+		FLAGSPAM=$($CMD_GREP $1 "x86_64.*-gcc.*$CFLAGS|x86_64.*-g++.*$CXXFLAGS")
+		if [[ $FLAGSPAM ]]; then
+			let RODNEY_DANGERFFLAG++
+		fi
 	fi
-	#TODO: Make this less spammy and wasteful. Read once check multiple
-	#FLAGSPAM=$($CMD_GREP $1  
 }
 
 ### MAIN STORY
@@ -105,13 +107,13 @@ for I in $*; do
 	atomise $I
 	case $DOSTUFF in #This is awful right now. More for structure
 		'hardcalls'|'all')
-			hardcalls $I $PACKAGE
+			hardcalls $I 
 			;;&
 		'lafiles'|'all')
-			lafiles $I $PACKAGE
+			lafiles $I
 			;;&
 		'flagrespect'|'all')
-			#flagrespect $I $PACKAGE
+			#flagrespect $I
 			#echo Work in progress...
 			#exit $E_WIP
 			;;
@@ -119,8 +121,11 @@ for I in $*; do
 			exit 0
 	esac
 
-	ISSUES=$(( $HARDCALLS+$STATIC_REFUGEES )) # Can just keep attaching things as tests get added. 
-	                                          # Any non-negative value makes the if resolve true.
+	# Can just keep attaching things as tests get added. 
+	# Any non-negative value makes the if resolve true.
+	ISSUES=$(( $HARDCALLS+ \
+	           $STATIC_REFUGEES+ \
+	           $RODNEY_DANGERFFLAG )) 
 
 #TODO: Make per-package report files
 	if [[ $ISSUES -gt 0 ]]; then
@@ -133,7 +138,12 @@ for I in $*; do
 		if [[ $STATIC_REFUGEES -gt 0 ]]; then
 			echo -e $BOLD$YELLOW"> Static Archive Refugees:"$NORM
 			echo -e "$LAFF"
-			$STATIC_REFUGEES=0
+			STATIC_REFUGEES=0
+		fi
+		if [[ $RODNEY_DANGERFFLAG -gt 0 ]]; then
+			echo -e $BOLD$YELLOW"> Not respecting CFLAGS/CXXFLAGS:"$NORM
+			echo -e "$RODNEY_DANGERFFLAG"
+			RODNEY_DANGERFFLAG=0
 		fi
 	else
 		echo -e "$BOLD$GREEN>>> $PACKAGE: NO ISSUES FOUND"$NORM
