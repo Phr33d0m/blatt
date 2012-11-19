@@ -107,7 +107,7 @@ for I in $*; do
 	atomise $I
 	case $DOSTUFF in #This is awful right now. More for structure
 		'hardcalls'|'all')
-			hardcalls $I 
+			hardcalls $I
 			;;&
 		'lafiles'|'all')
 			lafiles $I
@@ -121,11 +121,11 @@ for I in $*; do
 			exit 0
 	esac
 
-	# Can just keep attaching things as tests get added. 
+	# Can just keep attaching things as tests get added.
 	# Any non-negative value makes the if resolve true.
 	ISSUES=$(( $HARDCALLS+ \
 	           $STATIC_REFUGEES+ \
-	           $RODNEY_DANGERFFLAG )) 
+	           $RODNEY_DANGERFFLAG ))
 
 #TODO: Make per-package report files
 	if [[ $ISSUES -gt 0 ]]; then
