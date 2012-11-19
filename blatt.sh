@@ -1,80 +1,141 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # blatt - (Gentoo) build log arch testing tool
 # by Denis M. (Phr33d0m)
+#    Wyatt Epp
 
-#vars
-CMD_GREP=`command -v egrep`
+ARGCOUNT=1
+E_NOFILE=1
+E_WIP=2
+E_FLAGSARETOUCHING=4
+E_WRONGARGS=33
+if [[ $# -lt $ARGCOUNT ]]; then
+	echo "Simple tool to find build system issues."
+	echo "Usage: $(basename $0) /path/to/logs-dir/<cat>:<pkg>-<ver>-....log"
+	exit $E_WRONGARGS
+fi
+
+CMD_GREP=$(command -v egrep)
 CMD_GREP_ARGS="--color=always"
 
 CMDS=""
 CMDS_ALT=""
 ISSUES=""
+DOSTUFF="all"
 PKG_NAME=""
-PKG_NAME_VER=""
 
-#colours
-TXTRED='\e[0;31m' 	# Red
-TXTGRN='\e[0;32m' 	# Green
-TXTYLW='\e[0;33m' 	# Yellow
-BLDRED='\e[1;31m' 	# Bold Red
-BLDGRN='\e[1;32m' 	# Bold Green
-BLDYLW='\e[1;33m' 	# Bold Yellow
+### COLOURS
+NORM=$(tput sgr0) #NORMal
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BOLD=$(tput bold)
 
-#checks
-if [ $# -ne 1 ]; then
-    echo "Usage: $(basename $0) /path/to/logs-dir/<cat>:<pkg>-<ver>-....log"
-    exit 1
-else
-    if [ -f $1 ]; then
-	PKG_NAME=$(echo $1 | xargs -n 1 basename | sed 's/:/\//;s/:.*//;s/\(.*\)-[0-9]\..*/\1/')
-	PKG_NAME_VER=$(echo $1 | xargs -n 1 basename | sed 's/:/\//;s/:.*//')
-    else
-	echo "ERROR: File does not exist."
-	exit 1
-    fi
-fi
+#Takes: Filename / Sets: CAT,PN,PV,PACAKGE
+function atomise(){
+	ATOM=($(qatom `head -1 $1|sed 's/.*:[[:space:]]*//'`))
+	CAT=${ATOM[0]}
+	PN=${ATOM[1]}
+	PV=${ATOM[2]}
+	PACKAGE=$CAT/$PN-$PV
+}
 
-
-### CHECK: HARDCODED CALLS
-#
-for i in $(ls --color=none /usr/bin/x86_64-pc-linux-gnu-* | sed 's:/usr/bin/x86_64-pc-linux-gnu-::g'); do
-    CMDS+="^"$i" |";
-    CMDS_ALT+="libtool.* "$i"|";
+### HARDCODED CALLS
+#TODO: Move this pile of stuff into a function so it only runs if necessary.
+# Set up our grep command
+for i in $(ls --color=never /usr/bin/x86_64-pc-linux-gnu-* | sed 's:/usr/bin/x86_64-pc-linux-gnu-::g'); do
+	CMDS+="^"$i" .|";
+	CMDS_ALT+="libtool.* "$i"|";
 done
-
-#sanitize vars
-CMDS=${CMDS%?}
-CMDS_ALT=${CMDS_ALT%?}
-
+CMDS=${CMDS%?} #Slice off last character
+CMDS_ALT=${CMDS_ALT%?} #Slice off last character
+# Escape +- for safety
 CMDS=$(echo $CMDS | sed 's:\+:\\+:g;s:\-:\\-:g')
 CMDS_ALT=$(echo $CMDS_ALT | sed 's:\+:\\+:g;s:\-:\\-:g')
 
-if [[ `$CMD_GREP $CMD_GREP_ARGS "'$CMDS'" $1 | wc -l` -gt 0 ]]; then
-    ISSUES="${ISSUES} hardcalls-issue"
-fi
-
-if [[ `$CMD_GREP $CMD_GREP_ARGS "'$CMDS_ALT'" $1 | wc -l` -gt 0 ]]; then
-    ISSUES="${ISSUES} hardcalls-issue"
-fi
-
+HARDCALLS=0
+function hardcalls(){ # 1: filename 2: PACKAGE
+	if [[ $PN == "gvim" ]];then
+		echo -e $RED"gvim has issues and will screw with your terminal"
+		echo -e $BOLD"TODO: continue ignoring gvim's logs. Do it manually."$NORM
+		return
+	fi
+	TREACLE=$($CMD_GREP $CMD_GREP_ARGS "$CMDS" $1)
+	if [[ $TREACLE ]]; then
+		let HARDCALLS++
+	else
+		echo -e $GREEN$2" is clean"$NORM
+	fi
+}
 
 ### CHECK: STATIC LIBS
 #
-
+	STATIC_REFUGEES=0
+function lafiles(){
+	if [[ $(head -4 $1|grep "USE.*static-libs") ]]; then
+		return # The USEs in the log are build-time
+	else
+		LAFF=$(qlist -C $PACKAGE|$CMD_GREP '.*\.a$|.*\.la$')
+		if [[ $LAFF ]]; then
+			let STATIC_REFUGEES++
+		fi
+	fi
+}
 
 ### CHECK: CFLAGS/CXXFLAGS respect
 #
-
+function flagrespect(){
+	RODNEY_DANGERFFLAG=0 #No respect, I tell ya!
+	#TODO: Patch log output to have this (or ask Zac)
+	CFLAGS=$(portageq envvar CFLAGS)
+	CXXFLAGS=$(portageq envvar CXXFLAGS)
+	if [[ $CFLAGS -eq $CXXFLAGS ]]; then
+		echo -e $BOLD$RED"CFLAGS and CXXFLAGS must not match!"$NORM
+		exit $E_FLAGSARETOUCHING
+	fi
+	#TODO: Make this less spammy and wasteful. Read once check multiple
+	#FLAGSPAM=$($CMD_GREP $1  
+}
 
 ### MAIN STORY
-#
-if [[ `echo $ISSUES | grep -c 'issue'` -gt 0 ]]; then
-    echo -e $BLDRED">>> ISSUES FOUND in package: '"$PKG_NAME_VER"'"
-    if echo $ISSUES | grep -q 'hardcalls-issue'; then
-	echo -e $BLDYLW"> Hardcoded calls:"
-	$CMD_GREP $CMD_GREP_ARGS "'$CMDS'" $1
-	$CMD_GREP $CMD_GREP_ARGS "'$CMDS_ALT'" $1
-    fi
-else
-    echo -e $BLDGRN">>> NO ISSUES FOUND"
-fi
+### Call requested tests on each desired file
+#TODO: convert to getopts and optional running
+for I in $*; do
+	if [[ -d $I ]]; then  continue; fi #Skip directories
+	if [[ $( head -1 $I|grep '^No package.*') ]]; then  continue; fi #Skip uninstalls
+	atomise $I
+	case $DOSTUFF in #This is awful right now. More for structure
+		'hardcalls'|'all')
+			hardcalls $I $PACKAGE
+			;;&
+		'lafiles'|'all')
+			lafiles $I $PACKAGE
+			;;&
+		'flagrespect'|'all')
+			#flagrespect $I $PACKAGE
+			#echo Work in progress...
+			#exit $E_WIP
+			;;
+		?) # should be unreachable right now.
+			exit 0
+	esac
+
+	ISSUES=$(( $HARDCALLS+$STATIC_REFUGEES )) # Can just keep attaching things as tests get added. 
+	                                          # Any non-negative value makes the if resolve true.
+
+#TODO: Make per-package report files
+	if [[ $ISSUES -gt 0 ]]; then
+		echo -e $BOLD$RED">>> $PACKAGE: ISSUES FOUND"
+		if [[ $HARDCALLS -gt 0 ]]; then
+			echo -e $BOLD$YELLOW"> Hardcoded calls:"$NORM
+			echo -e "$TREACLE"$NORM
+			HARDCALLS=0
+		fi
+		if [[ $STATIC_REFUGEES -gt 0 ]]; then
+			echo -e $BOLD$YELLOW"> Static Archive Refugees:"$NORM
+			echo -e "$LAFF"
+			$STATIC_REFUGEES=0
+		fi
+	else
+		echo -e "$BOLD$GREEN>>> $PACKAGE: NO ISSUES FOUND"$NORM
+	fi
+done
