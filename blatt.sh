@@ -86,10 +86,10 @@ function lafiles(){
 #
 function flagrespect(){
 	#TODO: Patch log output to have this (or ask Zac)
-	#CFLAGS=$(portageq envvar CFLAGS)
-	#CXXFLAGS=$(portageq envvar CXXFLAGS)
-	CFLAGS="-march=native -O2 -pipe"
-	CXXFLAGS="-march=native -msse4 -msse4.1 -msse4.2 -O2 -pipe"
+	CFLAGS=$(portageq envvar CFLAGS)
+	CXXFLAGS=$(portageq envvar CXXFLAGS)
+	#CFLAGS="-march=native -O2 -pipe"
+	#CXXFLAGS="-march=native -msse4 -msse4.1 -msse4.2 -O2 -pipe"
 	if [[ $CFLAGS == $CXXFLAGS ]]; then
 		echo -e $BOLD$RED"CFLAGS and CXXFLAGS must not match!"$NORM
 		return
@@ -119,13 +119,13 @@ for I in $*; do
 	atomise $I
 	case $DOSTUFF in #This is awful right now. More for structure
 		'hardcalls'|'all')
-			hardcalls $I
+			#hardcalls $I
 			;;&
 		'lafiles'|'all')
-			lafiles $I
+			#lafiles $I
 			;;&
 		'flagrespect'|'all')
-			flagrespect $I
+			#flagrespect $I
 			;;
 		?) # should be unreachable right now.
 			exit 0
