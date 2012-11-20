@@ -137,7 +137,7 @@ for I in $*; do
 
 #TODO: Make per-package report files
 	if [[ $ISSUES -gt 0 ]]; then
-		echo -e $BOLD$RED">>> $PACKAGE: ISSUES FOUND"
+		echo -e $BOLD$RED">>> $PACKAGE: ISSUES FOUND"$NORM
 		if [[ $HARDCALLS -gt 0 ]]; then
 			echo -e $BOLD$YELLOW"> Hardcoded calls:"$NORM
 			echo -e "$TREACLE"$NORM
@@ -154,11 +154,11 @@ for I in $*; do
 				echo -e "$FLAGSPAM"
 			fi
 			if [[ $VFLAG_G ]]; then
-				echo -e "Added -g "$VFLAG_G" times!"
+				echo -e $RED"Added -g "$VFLAG_G" times!"$NORM
 				VFLAG_G=0
 			fi
 			if [[ $VFLAG_O ]]; then
-				echo -e "Added -O "$VFLAG_O" times!"
+				echo -e $RED"Added -O "$VFLAG_O" times!"$NORM
 				VFLAG_O=0
 			fi
 			RODNEY_DANGERFFLAG=0
