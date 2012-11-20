@@ -1,31 +1,23 @@
-What is this?
-=============
+# What is this?
 Just a very simple script to help Gentoo arch testers find out issues with packages' build systems.  
 It should find very obvious problems, but is far from perfect. Also, it could (and will probably do for sure) miss issues that is supposed to find out.
 
-How does it work?
-=================
-
-Prerequisites
--------------
+# How does it work?
+## Prerequisites
 You *should* have set `PORT_LOGDIR` in your `make.conf` like this: `PORT_LOGDIR="/path/to/logs"`, otherwise build logs won't get saved by portage for later use.
 
 You can perfectly use **blatt** without having `PORT_LOGDIR` set, of course.
 
-Dependencies
-------------
+## Dependencies
 **blatt** depends on:
 * app-portage/eix
 * app-portage/gentoolkit
 
-Usage
------
+## Usage
 Just pass `blatt.sh`, as arguments, a list of build logs. Usually all build logs will be in PORT_LOGDIR.
 
-Example:
-
+### Example
 ![alt text](http://i.politeia.in/di-SQZL.png "blatt in action")
 
-Bugs?
-=====
+# Bugs?
 All type of help is appreciated.  Bug reports, new ideas and patches are ALWAYS welcome!
