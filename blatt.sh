@@ -86,7 +86,7 @@ function flagrespect(){
 	#TODO: Patch log output to have this (or ask Zac)
 	CFLAGS=$(portageq envvar CFLAGS)
 	CXXFLAGS=$(portageq envvar CXXFLAGS)
-	if [[ $CFLAGS -eq $CXXFLAGS ]]; then
+	if [[ $CFLAGS == $CXXFLAGS ]]; then
 		echo -e $BOLD$RED"CFLAGS and CXXFLAGS must not match!"$NORM
 		exit $E_FLAGSARETOUCHING
 	else
