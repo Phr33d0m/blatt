@@ -119,13 +119,13 @@ for I in $*; do
 	atomise $I
 	case $DOSTUFF in #This is awful right now. More for structure
 		'hardcalls'|'all')
-			#hardcalls $I
+			hardcalls $I
 			;;&
 		'lafiles'|'all')
-			#lafiles $I
+			lafiles $I
 			;;&
 		'flagrespect'|'all')
-			#flagrespect $I
+			flagrespect $I
 			;;
 		?) # should be unreachable right now.
 			exit 0
