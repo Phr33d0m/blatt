@@ -137,7 +137,7 @@ for I in $*; do
 			HARDCALLS=0
 		fi
 		if [[ $STATIC_REFUGEES -gt 0 ]]; then
-			echo -e $BOLD$YELLOW"> Static Archive Refugees:"$NORM
+			echo -e $BOLD$YELLOW"> Static libraries (that should not be there) found:"$NORM
 			echo -e "$LAFF"
 			STATIC_REFUGEES=0
 		fi
@@ -147,7 +147,7 @@ for I in $*; do
 			RODNEY_DANGERFFLAG=0
 		fi
 	else
-		echo -e "$BOLD$GREEN>>> $PACKAGE: NO ISSUES FOUND"$NORM
+		echo -e $BOLD$GREEN">>> $PACKAGE: NO ISSUES FOUND"$NORM
 	fi
 done
 
