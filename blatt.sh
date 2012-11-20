@@ -91,6 +91,7 @@ function flagrespect(){
 		exit $E_FLAGSARETOUCHING
 	else
 		#TODO: Make this less spammy and wasteful. Read once check multiple
+		#BUG: This is just plain wrong. We're checking for absence of flags.
 		FLAGSPAM=$($CMD_GREP $1 "x86_64.*-gcc.*$CFLAGS|x86_64.*-g++.*$CXXFLAGS")
 		if [[ $FLAGSPAM ]]; then
 			let RODNEY_DANGERFFLAG++
