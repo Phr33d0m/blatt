@@ -35,7 +35,7 @@ BOLD=$(tput bold)
 
 #Takes: Filename / Sets: CAT,PN,PV,PACAKGE
 function atomise(){
-	ATOM=($(qatom `head -1 $1|sed 's/.*:[[:space:]]*//'`))
+	ATOM=($(qatom $(head -1 $1|sed 's/.*:[[:space:]]*//')))
 	CAT=${ATOM[0]}
 	PN=${ATOM[1]}
 	PV=${ATOM[2]}
