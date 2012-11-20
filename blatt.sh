@@ -86,8 +86,10 @@ function lafiles(){
 #
 function flagrespect(){
 	#TODO: Patch log output to have this (or ask Zac)
-	CFLAGS=$(portageq envvar CFLAGS)
-	CXXFLAGS=$(portageq envvar CXXFLAGS)
+	#CFLAGS=$(portageq envvar CFLAGS)
+	#CXXFLAGS=$(portageq envvar CXXFLAGS)
+	CFLAGS="-march=native -O2 -pipe"
+	CXXFLAGS="-march=native -msse4 -msse4.1 -msse4.2 -O2 -pipe"
 	if [[ $CFLAGS == $CXXFLAGS ]]; then
 		echo -e $BOLD$RED"CFLAGS and CXXFLAGS must not match!"$NORM
 		return
@@ -99,10 +101,10 @@ function flagrespect(){
 		# Horrifying magic: remove the C{,XX}FLAGS with variable parameter substitution
 		grep -lq "gcc" <(echo "$RANGE") && RANGE=${RANGE//$CFLAGS//}
 		grep -lq "g++" <(echo "$RANGE") && RANGE=${RANGE//$CXXFLAGS//}
-		VFLAG_G=$(egrep -c " -g " <(echo "$RANGE"))
-		VFLAG_O=$(egrep -c " -O[[:digit:],s]" <(echo "$RANGE"))
+		VFLAG_G=$(egrep " -g | -g0 " <(echo "$RANGE"))
+		VFLAG_O=$(egrep " -O[[:digit:],s]" <(echo "$RANGE"))
 
-		if [[ $FLAGSPAM || $(($VFLAG_G + $VFLAG_O)) -ne 0 ]]; then
+		if [[ $FLAGSPAM || $VFLAG_G || $VFLAG_O ]]; then
 			let RODNEY_DANGERFFLAG++
 		fi
 	fi
@@ -154,11 +156,13 @@ for I in $*; do
 				echo -e "$FLAGSPAM"
 			fi
 			if [[ $VFLAG_G ]]; then
-				echo -e $RED"Added -g "$VFLAG_G" times!"$NORM
+				echo -e $BOLD$YELLOW"> Added extra -g:"$NORM
+				echo -e "$VFLAG_G"
 				VFLAG_G=0
 			fi
 			if [[ $VFLAG_O ]]; then
-				echo -e $RED"Added -O "$VFLAG_O" times!"$NORM
+				echo -e $BOLD$YELLOW"> Added extra -O:"$NORM
+				echo -e "$VFLAG_O"
 				VFLAG_O=0
 			fi
 			RODNEY_DANGERFFLAG=0
