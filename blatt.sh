@@ -23,6 +23,8 @@ ISSUES=0
 HARDCALLS=0
 STATIC_REFUGEES=0
 RODNEY_DANGERFFLAG=0 #No respect, I tell ya!
+VFLAG_O=0
+VFLAG_G=0
 DOSTUFF="all"
 PKG_NAME=""
 
@@ -93,7 +95,14 @@ function flagrespect(){
 		RANGE=$(egrep "?*x86_64.*-g[++,cc].*\.c?*$" $1) #Filter out all noise
 		#TODO: This is painfully naive.
 		FLAGSPAM=$($CMD_GREP -v "x86_64.*-gcc.*$CFLAGS|x86_64.*-g++.*$CXXFLAGS" <(echo "$RANGE") )
-		if [[ $FLAGSPAM ]]; then
+
+		# Horrifying magic: remove the C{,XX}FLAGS with variable parameter substitution
+		grep -lq "gcc" <(echo "$RANGE") && RANGE=${RANGE//$CFLAGS//}
+		grep -lq "g++" <(echo "$RANGE") && RANGE=${RANGE//$CXXFLAGS//}
+		VFLAG_G=$(egrep -c " -g " <(echo "$RANGE"))
+		VFLAG_O=$(egrep -c " -O[[:digit:],s]" <(echo "$RANGE"))
+
+		if [[ $FLAGSPAM || $(($VFLAG_G + $VFLAG_O)) -ne 0 ]]; then
 			let RODNEY_DANGERFFLAG++
 		fi
 	fi
@@ -140,8 +149,18 @@ for I in $*; do
 			STATIC_REFUGEES=0
 		fi
 		if [[ $RODNEY_DANGERFFLAG -gt 0 ]]; then
-			echo -e $BOLD$YELLOW"> Not respecting CFLAGS/CXXFLAGS:"$NORM
-			echo -e "$FLAGSPAM"
+			if [[ $FLAGSPAM ]]; then
+				echo -e $BOLD$YELLOW"> Not respecting CFLAGS/CXXFLAGS:"$NORM
+				echo -e "$FLAGSPAM"
+			fi
+			if [[ $VFLAG_G ]]; then
+				echo -e "Added -g "$VFLAG_G" times!"
+				VFLAG_G=0
+			fi
+			if [[ $VFLAG_O ]]; then
+				echo -e "Added -O "$VFLAG_O" times!"
+				VFLAG_O=0
+			fi
 			RODNEY_DANGERFFLAG=0
 		fi
 	else
