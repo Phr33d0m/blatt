@@ -90,9 +90,10 @@ function flagrespect(){
 		echo -e $BOLD$RED"CFLAGS and CXXFLAGS must not match!"$NORM
 		exit $E_FLAGSARETOUCHING
 	else
-		#TODO: Make this less spammy and wasteful. Read once check multiple
-		#BUG: This is just plain wrong. We're checking for absence of flags.
-		FLAGSPAM=$($CMD_GREP $1 "x86_64.*-gcc.*$CFLAGS|x86_64.*-g++.*$CXXFLAGS")
+		echo testing range
+		RANGE=$(egrep "?*x86_64.*-g[++,cc].*\.c?*$" $1) #Filter out all noise
+		#TODO: This is painfully naive.
+		FLAGSPAM=$($CMD_GREP -v "x86_64.*-gcc.*$CFLAGS|x86_64.*-g++.*$CXXFLAGS" <(echo "$RANGE") )
 		if [[ $FLAGSPAM ]]; then
 			let RODNEY_DANGERFFLAG++
 		fi
@@ -114,9 +115,7 @@ for I in $*; do
 			lafiles $I
 			;;&
 		'flagrespect'|'all')
-			#flagrespect $I
-			#echo Work in progress...
-			#exit $E_WIP
+			flagrespect $I
 			;;
 		?) # should be unreachable right now.
 			exit 0
@@ -143,7 +142,7 @@ for I in $*; do
 		fi
 		if [[ $RODNEY_DANGERFFLAG -gt 0 ]]; then
 			echo -e $BOLD$YELLOW"> Not respecting CFLAGS/CXXFLAGS:"$NORM
-			echo -e "$RODNEY_DANGERFFLAG"
+			echo -e "$FLAGSPAM"
 			RODNEY_DANGERFFLAG=0
 		fi
 	else
