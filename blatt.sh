@@ -92,7 +92,7 @@ function flagrespect(){
 		echo -e $BOLD$RED"CFLAGS and CXXFLAGS must not match!"$NORM
 		return
 	else
-		RANGE=$(egrep "?*x86_64.*-g[++,cc].*\.c?*$" $1) #Filter out all noise
+		RANGE=$(egrep -i "?*x86_64.*-g[++,cc].*\.c?*$" $1) #Filter out all noise
 		#TODO: This is painfully naive.
 		FLAGSPAM=$($CMD_GREP -v "x86_64.*-gcc.*$CFLAGS|x86_64.*-g++.*$CXXFLAGS" <(echo "$RANGE") )
 
