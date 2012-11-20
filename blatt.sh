@@ -104,7 +104,7 @@ function flagrespect(){
 ### Call requested tests on each desired file
 #TODO: convert to getopts and optional running
 for I in $*; do
-	if [[ -d $I ]]; then  continue; fi #Skip directories
+	if [[ -d $I || ! -e $I ]]; then  continue; fi #Skip directories and non-files
 	if [[ $( head -1 $I|grep '^No package.*') ]]; then  continue; fi #Skip uninstalls
 	atomise $I
 	case $DOSTUFF in #This is awful right now. More for structure
