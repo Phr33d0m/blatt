@@ -75,8 +75,9 @@ function lafiles(){
 	if [[ $(head -4 $1|grep "USE.*static-libs") ]]; then
 		return # The USEs in the log are build-time
 	else
-		LAFF=$(qlist -C $PACKAGE|$CMD_GREP '.*\.a$|.*\.la$|.*\.so$'|sort -t'.' -k2)
-		if [[ $(egrep -l "\.[a,la].*\.so|.*\.so.*\.[a,la]" <(echo $LAFF)) ]]; then
+		# If there are static libs after this point, that's a bug
+		LAFF=$(qlist -C $PACKAGE|$CMD_GREP '.*\.a$|.*\.la$')
+		if [[ $LAFF ]]; then
 			let STATIC_REFUGEES++
 		fi
 	fi
@@ -145,7 +146,7 @@ for I in $*; do
 			HARDCALLS=0
 		fi
 		if [[ $STATIC_REFUGEES -gt 0 ]]; then
-			echo -e $BOLD$YELLOW"> Mixing Static and Dynamic Libraries:"$NORM
+			echo -e $BOLD$YELLOW"> Static Libraries in Dynamic Packages:"$NORM
 			echo -e "$LAFF"
 			STATIC_REFUGEES=0
 		fi
