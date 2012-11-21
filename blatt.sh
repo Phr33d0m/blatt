@@ -15,7 +15,7 @@ if [[ $# -lt $ARGCOUNT ]]; then
 fi
 
 CMD_GREP=$(command -v egrep)
-CMD_GREP_ARGS="--color=always"
+CMD_GREP_ARGS="--color=always --"
 
 CMDS=""
 CMDS_ALT=""
@@ -101,8 +101,8 @@ function flagrespect(){
 		# Less magical. Just decides which one to use.
 		grep -lq "gcc" <(echo "$RANGE") && SSTRING=$CFLAGS
 		grep -lq "g++" <(echo "$RANGE") && SSTRING=$CXXFLAGS
-		VFLAG_G=$($CMD_GREP -- "$SSTRING.* -[g,g0] " <(echo "$RANGE"))
-		VFLAG_O=$(egrep -- "$SSTRING .* -O[[:digit:],s]" <(echo "$RANGE"))
+		VFLAG_G=$($CMD_GREP $CMD_GREP_ARGS "$SSTRING.* -[g,g0] " <(echo "$RANGE"))
+		VFLAG_O=$($CMD_GREP $CMD_GREP_ARGS "$SSTRING .* -O[[:digit:],s]" <(echo "$RANGE"))
 
 		if [[ $FLAGSPAM || $VFLAG_G || $VFLAG_O ]]; then
 			let RODNEY_DANGERFFLAG++
