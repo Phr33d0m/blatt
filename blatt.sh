@@ -75,7 +75,7 @@ function lafiles(){
 	if [[ $(head -4 $1|grep "USE.*static-libs") ]]; then
 		return # The USEs in the log are build-time
 	else
-		LAFF=$(qlist -C $PACKAGE|$CMD_GREP '.*\.a$|.*\.la$|.*\.so$')
+		LAFF=$(qlist -C $PACKAGE|$CMD_GREP '.*\.a$|.*\.la$|.*\.so$'|sort -t'.' -k2)
 		if [[ $(egrep -l "\.[a,la].*\.so|.*\.so.*\.[a,la]" <(echo $LAFF)) ]]; then
 			let STATIC_REFUGEES++
 		fi
