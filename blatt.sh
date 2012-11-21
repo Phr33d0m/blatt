@@ -11,8 +11,33 @@ E_WRONGARGS=33
 if [[ $# -lt $ARGCOUNT ]]; then
 	echo "Simple tool to find build system issues."
 	echo "Usage: $(basename $0) /path/to/logs-dir/<cat>:<pkg>-<ver>-....log"
+	echo "	-a : All tests (default)"
+	echo "	-f : Compiler flag tests"
+	echo "	-h : Hardcoded call test"
+	echo "	-l : Static library tests"
 	exit $E_WRONGARGS
 fi
+
+DOSTUFF="all" #default
+while getopts "a:f:h:l:" OPTION; do
+	case $OPTION in
+		'a')
+			DOSTUFF="all"
+			;;
+		'f')
+			DOSTUFF="flagrespect"
+			;;
+		'h')
+			DOSTUFF="hardcalls"
+			;;
+		'l')
+			DOSTUFF="lafiles"
+			;;
+		'?')
+			;;
+	esac
+done
+
 
 CMD_GREP=$(command -v egrep)
 CMD_GREP_ARGS="--color=always --"
@@ -25,7 +50,6 @@ STATIC_REFUGEES=0
 RODNEY_DANGERFFLAG=0 #No respect, I tell ya!
 VFLAG_O=0
 VFLAG_G=0
-DOSTUFF="all"
 PKG_NAME=""
 
 ### COLOURS
