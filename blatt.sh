@@ -94,8 +94,7 @@ function flagrespect(){
 		echo -e $BOLD$RED"CFLAGS and CXXFLAGS must not match!"$NORM
 		return
 	else
-		RANGE=$(egrep -i "?*x86_64.*-g[++,cc].*\.c?*$" $1) #Filter out all noise
-		#TODO: This is painfully naive.
+		RANGE=$(egrep -i "?*x86_64.*-g[++,cc].*\.c?*$" $1|grep -v "configure:") #Filter out all noise
 		FLAGSPAM=$($CMD_GREP -v "x86_64.*-gcc.*$CFLAGS|x86_64.*-g++.*$CXXFLAGS" <(echo "$RANGE") )
 
 		# Horrifying magic: remove the C{,XX}FLAGS with variable parameter substitution
