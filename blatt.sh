@@ -98,11 +98,11 @@ function flagrespect(){
 		RANGE=$(egrep -i "?*x86_64.*-g[++,cc].*\.c?*$" $1|grep -v "configure:") #Filter out all noise
 		FLAGSPAM=$($CMD_GREP -v "x86_64.*-gcc.*$CFLAGS|x86_64.*-g++.*$CXXFLAGS" <(echo "$RANGE") )
 
-		# Horrifying magic: remove the C{,XX}FLAGS with variable parameter substitution
-		grep -lq "gcc" <(echo "$RANGE") && RANGE=${RANGE//$CFLAGS//}
-		grep -lq "g++" <(echo "$RANGE") && RANGE=${RANGE//$CXXFLAGS//}
-		VFLAG_G=$(egrep " -g | -g0 " <(echo "$RANGE"))
-		VFLAG_O=$(egrep " -O[[:digit:],s]" <(echo "$RANGE"))
+		# Less magical. Just decides which one to use.
+		grep -lq "gcc" <(echo "$RANGE") && SSTRING=$CFLAGS
+		grep -lq "g++" <(echo "$RANGE") && SSTRING=$CXXFLAGS
+		VFLAG_G=$($CMD_GREP -- "$SSTRING.* -[g,g0] " <(echo "$RANGE"))
+		VFLAG_O=$(egrep -- "$SSTRING .* -O[[:digit:],s]" <(echo "$RANGE"))
 
 		if [[ $FLAGSPAM || $VFLAG_G || $VFLAG_O ]]; then
 			let RODNEY_DANGERFFLAG++
