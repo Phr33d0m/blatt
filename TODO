@@ -1,0 +1,13 @@
+FEATURE:
+- Convert to getopts and optional running
+- Make per-package report files
+- Condense output to make it more useful
+- Check for more foreign options. -f* and such
+
+BUG:
+- Look into gvim's logs. They clobber terminals because there are a lot of random
+control characters in their build.
+
+UPSTREAM:
+- Portage: Need logs with full emerge --info
+- Portage: FEATURES=arch-testing
