@@ -48,7 +48,7 @@ function atomise(){
 #TODO: Move this pile of stuff into a function so it only runs if necessary.
 # Set up our grep command
 for i in $(ls --color=never /usr/bin/x86_64-pc-linux-gnu-* | sed 's:/usr/bin/x86_64-pc-linux-gnu-::g'); do
-	CMDS+="^"$i"[[:space:]]|libtool.* "$i"|";
+	CMDS+="^"$i"[[:space:]]|libtool.* "$i"[[:space:]]|";
 	#CMDS_ALT+="libtool.* "$i"|";
 done
 CMDS=${CMDS%?} #Slice off last character
